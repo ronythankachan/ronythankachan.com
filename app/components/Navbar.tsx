@@ -29,6 +29,11 @@ const Navbar = () => {
     setIsResourcesOpen(!isResourcesOpen);
   };
 
+  const handleMobileMenuClose = () => {
+    setIsMobileMenuOpen(false);
+    setIsResourcesOpen(false); // Also close resources dropdown
+  };
+
   return (
     <div className="relative">
       {/* Desktop Navbar */}
@@ -75,21 +80,12 @@ const Navbar = () => {
         </Link>
         
         <div className="flex items-center gap-4">
-          {/* Free Resources Button - Tablet only */}
-          <button
-            className="hidden md:block lg:hidden text-xl"
-            onClick={toggleResources}
-          >
-            Free Resources
-            <span className="ml-2">▼</span>
-          </button>
-
           {/* Join Subscribers Button - Tablet only */}
           <Link
             href="/subscribe"
             className="hidden md:block lg:hidden bg-[#fd976d] text-black px-8 py-3 rounded-full hover:bg-[#fcd56b] transition-colors text-xl"
           >
-            Join 230k+ Subscribers
+            Join 260k+ Subscribers
           </Link>
 
           {/* Mobile Menu Button */}
@@ -109,18 +105,18 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <MobileMenu 
         isOpen={isMobileMenuOpen} 
-        onClose={() => setIsMobileMenuOpen(false)}
-        onResourcesClick={() => {
-          setIsMobileMenuOpen(false);  // Close mobile menu first
-          setIsResourcesOpen(true);    // Then open resources dropdown
-        }}
+        onClose={handleMobileMenuClose}
+        onResourcesClick={() => setIsResourcesOpen(!isResourcesOpen)}
+        isResourcesOpen={isResourcesOpen}
       />
 
-      {/* Resources Dropdown */}
-      <ResourcesDropdown 
-        isOpen={isResourcesOpen}
-        onClose={() => setIsResourcesOpen(false)}
-      />
+      {/* Resources Dropdown - Only show in desktop view */}
+      {!isMobileMenuOpen && (
+        <ResourcesDropdown 
+          isOpen={isResourcesOpen}
+          onClose={() => setIsResourcesOpen(false)}
+        />
+      )}
     </div>
   );
 };
