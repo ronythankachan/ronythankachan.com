@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MobileMenu from "./MobileMenu";
 import ResourcesDropdown from './ResourcesDropdown';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const ignoreNextClickRef = useRef(false);
   
   const resourceTypes = [
     { icon: "📝", label: "Articles" },
@@ -34,9 +36,27 @@ const Navbar = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ignoreNextClickRef.current) {
+        ignoreNextClickRef.current = false;
+        return;
+      }
+
+      if (buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
+        setIsResourcesOpen(false);
+      }
+    };
+
+    // Use capture phase to ensure this runs before the button click
+    document.addEventListener('click', handleClickOutside, true);
+    return () => document.removeEventListener('click', handleClickOutside, true);
+  }, []);
+
   const handleResourcesClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent event bubbling
-    setIsResourcesOpen(prev => !prev);
+    e.stopPropagation();
+    ignoreNextClickRef.current = true;
+    setIsResourcesOpen(!isResourcesOpen);
   };
 
   const handleMobileMenuClose = () => {
@@ -65,6 +85,7 @@ const Navbar = () => {
             Github
           </Link>
           <button 
+            ref={buttonRef}
             onClick={handleResourcesClick}
             className="flex items-center text-lg"
           >

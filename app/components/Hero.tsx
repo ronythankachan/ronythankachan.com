@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="bg-[#f8f6f3] py-8">
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="w-full md:w-1/2 order-2 md:order-1">
+          <div className="w-full md:w-1/2 order-1 md:order-1">
             <div className="max-w-[400px] mx-auto md:mx-0">
               <Image 
                 src="/rony.png" 
@@ -20,7 +20,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 order-1 md:order-2 text-center md:text-left md:pl-10">
+          <div className="w-full md:w-1/2 order-2 md:order-2 text-center md:text-left md:pl-10">
             <h1 className="text-[40px] md:text-[52px] leading-tight font-serif mb-6 relative">
               Hey Humans (and AI)!
               <div className="absolute bottom-[-5px] left-0 right-0 md:right-auto md:w-[300px]">
