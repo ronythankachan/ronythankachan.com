@@ -1,27 +1,46 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
 
-const HowCanIHelp = () => {
-  return (
-    <div className="flex px-28 py-10 mt-20 space-x-20">
-      <div className="w-1/2">
-        <div className="font-bold text-6xl mb-10 text-center">
-          <h1>
-            How can I <br /> help you?
-          </h1>
-        </div>
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
-      </div>
+const Services = () => {
+  const services = [
+    {
+      title: "Grow a YouTube Channel",
+      description: "Learn how to start a YouTube channel based on my years of experience.",
+      icon: "🎥",
+      bgColor: "bg-gray-50",
+      hoverColor: "hover:bg-sky-400"
+    },
+    {
+      title: "Be More Productive",
+      description: "How to execute efficiently, make time for what matters and have fun along the way.",
+      icon: "⚙️",
+      bgColor: "bg-gray-50",
+      hoverColor: "hover:bg-purple-400"
+    },
+    {
+      title: "Build an Online Business",
+      description: "How to execute efficiently, make time for what matters and have fun along the way.",
+      icon: "💰",
+      bgColor: "bg-gray-50",
+      hoverColor: "hover:bg-emerald-400"
+    }
+  ];
 
-      <div className="w-1/2">
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
+  return (
+    <section className="max-w-[1400px] mx-auto px-4 py-20">
+      <h1 className="text-[80px] leading-tight font-serif mb-16">
+        How Can<br />I Help You?
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px]">
+        {services.map((service, index) => (
+          <ServiceCard
+            key={index}
+            {...service}
+          />
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default HowCanIHelp;
+export default Services;

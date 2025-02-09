@@ -1,17 +1,28 @@
 import React from "react";
-import Image from "next/image";
 
-const ServiceCard = () => {
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: string;
+  bgColor: string;
+  hoverColor: string;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  title,
+  description,
+  icon,
+  bgColor,
+  hoverColor
+}) => {
   return (
-    <div className="bg-[#f8f6f3] flex flex-col items-start p-20 rounded-2xl mt-10 hover:bg-orange-300">
-      <Image src={"/message.png"} alt="hero" width={100} height={100} />
-      <h1 className="text-4xl mb-5">Grow a Youtube Channel</h1>
-      <h3>
-        Learn how to start youtube channel based on my years of experience{" "}
-      </h3>
-      <div className="flex items-center justify-center space-x-4 mt-10">
-        <button>Get started</button>
-        <Image src={"/arrow.png"} alt="arrow" width={30} height={30} />
+    <div className={`p-8 rounded-[20px] transition-all duration-300 transform hover:-translate-y-1 ${bgColor} ${hoverColor} group`}>
+      <div className="text-4xl mb-6">{icon}</div>
+      <h3 className="text-[32px] font-serif mb-4 leading-tight">{title}</h3>
+      <p className="text-gray-600 text-lg mb-6">{description}</p>
+      <div className="inline-flex items-center space-x-2 font-medium border-b border-black">
+        <span>Get started</span>
+        <span className="transform transition-transform duration-300 group-hover:translate-x-2">→</span>
       </div>
     </div>
   );
