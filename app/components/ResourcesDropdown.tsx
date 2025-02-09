@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import ResourceList from './shared/ResourceList';
 import { resourceTypes, resourceTopics } from '../constants/navigation';
@@ -11,10 +11,52 @@ interface ResourcesDropdownProps {
 }
 
 const ResourcesDropdown: React.FC<ResourcesDropdownProps> = ({ isOpen, onClose }) => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
+  useEffect(() => {
+    const updateDropdownPosition = () => {
+      if (dropdownRef.current) {
+        const navbar = document.querySelector('nav');
+        if (navbar) {
+          const navbarRect = navbar.getBoundingClientRect();
+          dropdownRef.current.style.top = `${navbarRect.bottom + 16}px`;
+        }
+      }
+    };
+
+    if (isOpen) {
+      updateDropdownPosition();
+      window.addEventListener('scroll', updateDropdownPosition);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', updateDropdownPosition);
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed top-24 left-1/2 -translate-x-1/2 bg-white rounded-3xl p-8 z-50 w-[90%] max-w-4xl">
+    <div 
+      ref={dropdownRef}
+      className="fixed left-1/2 -translate-x-1/2 bg-white rounded-3xl p-8 z-50 w-[90%] max-w-4xl shadow-lg"
+    >
       {/* Desktop Layout - Two Columns */}
       <div className="hidden lg:block">
         <div className="grid grid-cols-2 gap-12">

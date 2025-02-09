@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MobileMenu from "./MobileMenu";
 import ResourcesDropdown from './ResourcesDropdown';
 
@@ -25,13 +25,23 @@ const Navbar = () => {
     { icon: "📱", label: "Tools & Tech" },
   ];
 
-  const toggleResources = () => {
-    setIsResourcesOpen(!isResourcesOpen);
+  useEffect(() => {
+    // Set the navbar height CSS variable
+    const navbar = document.querySelector('nav');
+    if (navbar) {
+      const height = navbar.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+    }
+  }, []);
+
+  const handleResourcesClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent event bubbling
+    setIsResourcesOpen(prev => !prev);
   };
 
   const handleMobileMenuClose = () => {
     setIsMobileMenuOpen(false);
-    setIsResourcesOpen(false); // Also close resources dropdown
+    setIsResourcesOpen(false);
   };
 
   return (
@@ -46,27 +56,31 @@ const Navbar = () => {
         
         {/* Desktop Navigation */}
         <div className="flex items-center gap-12">
-          <Link href="/book" className="text-lg hover:underline hover:underline-offset-4">
-            My Book
+          <Link 
+            href="https://github.com/ronythankachan" 
+            className="text-lg hover:underline hover:underline-offset-4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >            
+            Github
           </Link>
           <button 
-            onClick={toggleResources}
+            onClick={handleResourcesClick}
             className="flex items-center text-lg"
           >
             Free Resources
             <span className="ml-2">▼</span>
           </button>
           <Link href="/academy" className="text-lg hover:underline hover:underline-offset-4">
-            YouTube Academy
-          </Link>
-          <Link href="/lab" className="text-lg hover:underline hover:underline-offset-4">
-            Productivity Lab
+            Blogs
           </Link>
           <Link
-            href="/subscribe"
+            href="https://www.linkedin.com/in/ronythankachan/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#fd976d] text-black px-6 py-2 rounded-full hover:bg-[#fcd56b] transition-colors text-lg"
           >
-            Join 260k+ Subscribers
+            Follow me on LinkedIn
           </Link>
         </div>
       </nav>
