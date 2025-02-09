@@ -8,10 +8,22 @@ const Navbar = () => {
       <Link href={"/"}>
         <Image src="/logo.png" alt="logo" width={300} height={300} />
       </Link>
-      <div className="flex items-center space-x-4">
-        <Link href={"/projects"}>Projects</Link>
-        <Link href={"/blogs"}>Blogs</Link>
-        <button className="bg-[#fd976d] text-black rounded-full px-6 py-2">
+      <div className="flex items-center space-x-6">
+        <Link
+          href="http://www.github.com/ronythankachan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline underline-offset-4"
+        >
+          Github
+        </Link>
+        <Link href={"/blogs"} className="hover:underline underline-offset-4">
+          Blogs
+        </Link>
+        <Link href={"/projects"} className="hover:underline underline-offset-4">
+          Projects
+        </Link>
+        <button className="bg-[#fd976d] text-black rounded-full px-6 py-2 hover:bg-[#fcd56b] transition duration-300">
           <Link
             href="http://www.linkedin.com/in/ronythankachan"
             target="_blank"
