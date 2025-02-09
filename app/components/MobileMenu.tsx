@@ -6,69 +6,69 @@ import Link from 'next/link';
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  onResourcesClick: () => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onResourcesClick }) => {
+  if (!isOpen) return null;
+
   return (
-    <div 
-      className={`fixed inset-0 bg-[#f8f6f3] z-50 transition-transform duration-300 ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}
-    >
-      <div className="flex flex-col h-full px-8 py-12">
+    <>
+      <div 
+        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+        onClick={onClose}
+      />
+      <div className="fixed inset-0 bg-[#f8f6f3] z-50 p-8">
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="self-end p-4"
+          className="absolute top-8 right-8 p-2"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <div className="w-8 h-8 flex items-center justify-center">
+            <span className="absolute w-8 h-[3px] bg-black rounded-full transform rotate-45"></span>
+            <span className="absolute w-8 h-[3px] bg-black rounded-full transform -rotate-45"></span>
+          </div>
         </button>
 
         {/* Navigation Links */}
-        <nav className="flex flex-col items-center justify-center flex-grow text-center space-y-12">
+        <div className="mt-24 flex flex-col gap-8">
           <Link 
             href="/book" 
-            className="text-2xl hover:underline hover:underline-offset-4"
+            className="text-3xl hover:underline"
             onClick={onClose}
           >
             My Book
           </Link>
-          
-          <div className="space-y-2">
-            <button className="text-2xl flex items-center justify-center">
-              Free Resources
-              <span className="ml-2 text-xl">▼</span>
-            </button>
-          </div>
-
+          <button 
+            onClick={onResourcesClick}
+            className="text-3xl text-left hover:underline"
+          >
+            Free Resources
+          </button>
           <Link 
             href="/academy" 
-            className="text-2xl hover:underline hover:underline-offset-4"
+            className="text-3xl hover:underline"
             onClick={onClose}
           >
             YouTube Academy
           </Link>
-          
           <Link 
             href="/lab" 
-            className="text-2xl hover:underline hover:underline-offset-4"
+            className="text-3xl hover:underline"
             onClick={onClose}
           >
             Productivity Lab
           </Link>
-
           <Link
             href="/subscribe"
-            className="w-full max-w-md py-4 px-6 rounded-full bg-[#5dccf1] text-center text-xl transition-colors hover:bg-[#4bb8dd]"
+            className="bg-[#fd976d] text-black px-8 py-3 rounded-full hover:bg-[#fcd56b] transition-colors text-2xl text-center mt-4"
             onClick={onClose}
           >
             Join 260k+ Subscribers
           </Link>
-        </nav>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const NewsLetter = () => {
   return (
-    <div className="bg-white rounded-[32px] p-8 md:p-16 mt-12">
+    <div className="bg-white rounded-[28px] p-6 md:p-12 mt-10">
       <div className="flex flex-col md:flex-row gap-8 md:gap-16">
         {/* Left Section */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
-            <h2 className="text-3xl md:text-4xl font-serif">
+            <h2 className="text-2xl md:text-3xl font-serif">
               Subscribe to<br />
               <span className="font-semibold">LifeNotes</span>
             </h2>
@@ -20,7 +20,7 @@ const NewsLetter = () => {
               className="mt-4 md:mt-[-20px]"
             />
           </div>
-          <p className="text-lg">
+          <p className="text-base">
             Join a growing community of more than<br />
             <span className="font-medium">260,000 friendly readers.</span>
           </p>

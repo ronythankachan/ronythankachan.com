@@ -27,8 +27,8 @@ const Services = () => {
   ];
 
   return (
-    <section className="max-w-[1400px] mx-auto px-4 py-20">
-      <h1 className="text-[80px] leading-tight font-serif mb-16">
+    <section className="max-w-[1200px] mx-auto px-4 py-16">
+      <h1 className="text-[60px] leading-tight font-serif mb-12">
         How Can<br />I Help You?
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px]">
