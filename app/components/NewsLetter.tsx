@@ -5,14 +5,14 @@ import Image from "next/image";
 
 const NewsLetter = () => {
   return (
-    <div className="bg-white rounded-[32px] p-16">
+    <div className="bg-white rounded-[32px] p-16 mt-10">
       <div className="flex gap-16">
         {/* Left Section */}
         <div className="w-1/2">
           <div className="flex items-center gap-4 mb-4">
             <h2 className="text-4xl font-serif">
               Subscribe to<br />
-              <span className="font-semibold">LifeNotes</span>
+              <span className="font-semibold">AI Snippets</span>
             </h2>
             <Image
               src="/message.png"
@@ -32,9 +32,7 @@ const NewsLetter = () => {
         {/* Right Section */}
         <div className="w-1/2">
           <p className="text-lg mb-8">
-            I share actionable productivity tips, practical life advice,
-            and high-quality insights from across the web, directly
-            to your inbox.
+          I share in-depth technical blogs on AI, high-traffic software systems, and personal insights from my weekly experiences—delivered straight to your inbox.
           </p>
           
           <div className="flex items-center gap-4">
@@ -52,8 +50,7 @@ const NewsLetter = () => {
           
           <p className="text-sm text-gray-500 mt-4">
             By submitting this form, you'll be signed up to my free newsletter. 
-            I may also send you other emails about my courses. You can opt-out at any time. 
-            For more information, see our privacy policy.
+            You can opt-out at any time. 
           </p>
         </div>
       </div>
