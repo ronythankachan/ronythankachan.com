@@ -22,17 +22,16 @@ const Hero = () => {
           
           <div className="w-full md:w-1/2 order-1 md:order-2 text-center md:text-left md:pl-10">
             <h1 className="text-[40px] md:text-[52px] leading-tight font-serif mb-6 relative">
-              Hey Friends!
-              <div className="absolute bottom-[-5px] left-0 right-0 md:right-auto md:w-[280px]">
+              Hey Humans (and AI)!
+              <div className="absolute bottom-[-5px] left-0 right-0 md:right-auto md:w-[540px]">
                 <div className="h-[2px] bg-[#5dccf1] mb-[2px] rounded-full opacity-60" />
                 <div className="h-[2px] bg-[#5dccf1] rounded-full" />
               </div>
             </h1>
             <p className="text-[28px] md:text-[32px] leading-tight font-serif">
-              I'm Rony. I'm a Full Stack Developer,{" "}
-              <span className="underline underline-offset-4">YouTuber</span>, and the
-              author of the New York Times bestseller,{" "}
-              <span className="underline underline-offset-4">Feel-Good Productivity</span>.
+              I'm Rony. A {" "}
+              <span className="underline underline-offset-4">Senior Software Engineer</span>, and {" "}
+              <span className="underline underline-offset-4">AI content writer</span>. If you are interested, have a look at what I'm working on.
             </p>
           </div>
         </div>
