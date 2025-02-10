@@ -103,7 +103,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <Link href="/academy" className="text-lg hover:underline hover:underline-offset-4">
+          <Link href="/blogs" className="text-lg hover:underline hover:underline-offset-4">
             Blogs
           </Link>
           <Link
