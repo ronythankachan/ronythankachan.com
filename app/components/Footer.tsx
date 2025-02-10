@@ -6,12 +6,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { href: "https://youtube.com", label: "YT", icon: "/youtube.png" },
-    { href: "https://instagram.com", label: "IG", icon: "/instagram.png" },
-    { href: "https://linkedin.com", label: "IN", icon: "/linkedin.png" },
-    { href: "https://tiktok.com", label: "TT", icon: "/tiktok.png" },
-    { href: "https://twitter.com", label: "X", icon: "/twitter.png" },
-    { href: "https://facebook.com", label: "FB", icon: "/facebook.png" },
+    { href: "https://www.youtube.com/@rony.thankachan", label: "YT", icon: "/youtube.png" },
+    { href: "https://instagram.com/iampurplish", label: "IG", icon: "/instagram.png" },
+    { href: "https://linkedin.com/in/ronythankachan", label: "IN", icon: "/linkedin.png" },
+    { href: "https://github.com/ronythankachan", label: "TT", icon: "/github.png" }
   ];
 
   const footerLinks = {
@@ -45,11 +43,10 @@ const Footer = () => {
               <div className="flex flex-col">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="text-[#5dccf1] text-4xl font-serif">RT</div>
-                  <span className="text-xl">Rony Thankachan</span>
                 </div>
-                <p className="text-gray-600 mb-8">
+                <small className="text-gray-600 mb-8">
                   © Rony Thankachan {currentYear}. All rights reserved.
-                </p>
+                </small>
               </div>
 
               <div className="flex gap-4">
@@ -57,11 +54,16 @@ const Footer = () => {
                   <Link
                     key={social.label}
                     href={social.href}
-                    className="w-14 h-14 flex items-center justify-center rounded-full bg-[#f8f6f3]"
+                    className="p-3 flex items-center justify-center rounded-full bg-[#f8f6f3]"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="text-gray-700">{social.label}</span>
+                    <Image
+                      src={social.icon}
+                      alt={social.label}
+                      width={24}
+                      height={24}
+                    />
                   </Link>
                 ))}
               </div>
@@ -133,7 +135,6 @@ const Footer = () => {
           <div className="flex flex-col items-center text-center mb-8">
             <div className="flex items-center gap-2 mb-4">
               <div className="text-[#5dccf1] text-4xl font-serif">RT</div>
-              <span className="text-3xl">Rony Thankachan</span>
             </div>
             <p className="text-gray-600">
               © Rony Thankachan {currentYear}. All rights reserved.
