@@ -9,7 +9,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const ignoreNextClickRef = useRef(false);
   
   const resourceTypes = [
     { icon: "📝", label: "Articles" },
@@ -38,24 +37,23 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (ignoreNextClickRef.current) {
-        ignoreNextClickRef.current = false;
-        return;
-      }
-
-      if (buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
+      if (
+        buttonRef.current && 
+        !buttonRef.current.contains(e.target as Node) &&
+        !(e.target as Element).closest('.resources-dropdown')
+      ) {
         setIsResourcesOpen(false);
       }
     };
 
-    // Use capture phase to ensure this runs before the button click
-    document.addEventListener('click', handleClickOutside, true);
-    return () => document.removeEventListener('click', handleClickOutside, true);
-  }, []);
+    if (isResourcesOpen) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [isResourcesOpen]);
 
   const handleResourcesClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    ignoreNextClickRef.current = true;
     setIsResourcesOpen(!isResourcesOpen);
   };
 

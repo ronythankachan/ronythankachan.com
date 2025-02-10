@@ -14,22 +14,6 @@ const ResourcesDropdown: React.FC<ResourcesDropdownProps> = ({ isOpen, onClose }
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen, onClose]);
-
-  useEffect(() => {
     const updateDropdownPosition = () => {
       if (dropdownRef.current) {
         const navbar = document.querySelector('nav');
@@ -55,7 +39,7 @@ const ResourcesDropdown: React.FC<ResourcesDropdownProps> = ({ isOpen, onClose }
   return (
     <div 
       ref={dropdownRef}
-      className="fixed left-1/2 -translate-x-1/2 bg-white rounded-3xl p-8 z-50 w-[90%] max-w-4xl shadow-lg"
+      className="fixed left-1/2 -translate-x-1/2 bg-white rounded-3xl p-8 z-50 w-[90%] max-w-4xl shadow-lg resources-dropdown"
     >
       {/* Desktop Layout - Two Columns */}
       <div className="hidden lg:block">
