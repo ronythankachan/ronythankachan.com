@@ -29,9 +29,9 @@ const Hero = () => {
               </div>
             </h1>
             <p className="text-[28px] md:text-[32px] leading-tight font-serif">
-              I'm Rony. A {" "}
+              I&apos;m Rony. A {" "}
               <span className="underline underline-offset-4">Senior Software Engineer</span>, and {" "}
-              <span className="underline underline-offset-4">AI content writer</span>. If you are interested, have a look at what I'm working on.
+              <span className="underline underline-offset-4">AI content writer</span>. If you are interested, have a look at what I&apos;m working on.
             </p>
           </div>
         </div>

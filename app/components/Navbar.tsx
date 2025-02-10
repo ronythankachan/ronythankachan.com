@@ -10,22 +10,6 @@ const Navbar = () => {
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   
-  const resourceTypes = [
-    { icon: "📝", label: "Articles" },
-    { icon: "📗", label: "Book Notes" },
-    { icon: "▶️", label: "Videos" },
-    { icon: "💬", label: "Podcast" },
-    { icon: "✉️", label: "Newsletter" },
-  ];
-
-  const resourceTopics = [
-    { icon: "⚙️", label: "Productivity" },
-    { icon: "🎥", label: "YouTube" },
-    { icon: "📚", label: "Studying" },
-    { icon: "💰", label: "Online Business" },
-    { icon: "📱", label: "Tools & Tech" },
-  ];
-
   useEffect(() => {
     // Set the navbar height CSS variable
     const navbar = document.querySelector('nav');

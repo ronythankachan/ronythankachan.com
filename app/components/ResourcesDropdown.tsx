@@ -7,10 +7,9 @@ import { resourceTypes, resourceTopics } from '../constants/navigation';
 
 interface ResourcesDropdownProps {
   isOpen: boolean;
-  onClose: () => void;
 }
 
-const ResourcesDropdown: React.FC<ResourcesDropdownProps> = ({ isOpen, onClose }) => {
+const ResourcesDropdown: React.FC<ResourcesDropdownProps> = ({ isOpen }) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
