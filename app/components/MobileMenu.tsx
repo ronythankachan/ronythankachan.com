@@ -57,7 +57,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             <div className="relative flex flex-col items-center w-full">
               <button 
                 onClick={onResourcesClick}
-                className="text-2xl text-center hover:underline flex items-center justify-center gap-2"
+                className="text-2xl text-center flex items-center justify-center gap-2"
               >
                 Free Resources
                 <svg 
