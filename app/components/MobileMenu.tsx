@@ -42,43 +42,43 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 
         {/* Scrollable Content */}
         <div className="h-full overflow-y-auto pt-24 px-8 pb-8">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 items-center w-full">
             {mainNavLinks.map((link) => (
               <Link 
                 key={link.label}
                 href={link.href} 
-                className="text-3xl hover:underline"
+                className="text-2xl hover:underline text-center"
                 onClick={onClose}
               >
                 {link.label}
               </Link>
             ))}
             
-            <div className="relative">
+            <div className="relative flex flex-col items-center w-full">
               <button 
                 onClick={onResourcesClick}
-                className="text-3xl text-left hover:underline"
+                className="text-2xl text-center hover:underline"
               >
                 Free Resources
               </button>
               
               {/* Inline Resources Dropdown for Mobile */}
               {isResourcesOpen && (
-                <div className="mt-4 bg-white rounded-3xl p-8">
-                  <div className="flex flex-col gap-8">
+                <div className="mt-4 bg-white rounded-3xl p-8 mx-2 w-[calc(100%-1rem)]">
+                  <div className="flex flex-col gap-8 items-center w-full">
                     <ResourceList 
                       title="Browse by type:"
                       items={resourceTypes}
-                      textSize="text-xl"
+                      textSize="text-lg"
                     />
                     <ResourceList 
                       title="Browse by topic:"
                       items={resourceTopics}
-                      textSize="text-xl"
+                      textSize="text-lg"
                     />
                     <Link 
                       href="/all-categories" 
-                      className="text-xl underline underline-offset-4"
+                      className="text-lg underline underline-offset-4 text-center"
                     >
                       all categories →
                     </Link>
@@ -88,7 +88,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             </div>
             <Link
               href="https://www.linkedin.com/in/ronythankachan"
-              className="bg-[#fd976d] text-black px-8 py-3 rounded-full hover:bg-[#fcd56b] transition-colors text-2xl text-center mt-4"
+              className="bg-[#fd976d] text-black px-8 py-3 rounded-full hover:bg-[#fcd56b] transition-colors text-xl text-center mt-4"
               onClick={onClose}
               target="_blank"
               rel="noopener noreferrer"
