@@ -15,21 +15,20 @@ const Footer = () => {
   const footerLinks = {
     More: [
       { label: "About", href: "/about" },
-      { label: "Jobs", href: "/jobs" },
-      { label: "Contact", href: "/contact" },
-      { label: "My Account", href: "/account" },
+      { label: "Contact", href: "/contact" }
     ],
-    "Free Content": [
-      { label: "Newsletter", href: "/newsletter" },
-      { label: "Articles & Guides", href: "/articles" },
+    "Contents": [
+      { label: "News Letter", href: "/newsletter" },
+      { label: "Blogs", href: "/articles" },
       { label: "Podcast", href: "/podcast" },
-      { label: "Videos", href: "/videos" },
-      { label: "Book Notes", href: "/books" },
+      { label: "Youtube Videos", href: "/videos" },
+      { label: "Interview Preperation", href: "/videos" }
     ],
-    Products: [
-      { label: "My Book", href: "/book" },
-      { label: "Productivity Lab", href: "/lab" },
-      { label: "YouTuber Academy", href: "/academy" },
+    Projects: [
+      { label: "Machine Learning & AI", href: "/book" },
+      { label: "Hospital Website", href: "www.drsreelekshmis.com" },
+      { label: "System Design", href: "/lab" },
+      { label: "Problem Solving", href: "https://www.leetcode.com/iamrony" },
     ],
   };
 

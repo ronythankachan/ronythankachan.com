@@ -10,9 +10,9 @@ const NewsLetter = () => {
         {/* Left Section */}
         <div className="w-full md:w-1/2">
           <div className="flex items-center gap-4 mb-4">
-            <h2 className="text-3xl md:text-4xl font-serif">
+            <h2 className="text-xl md:text-4xl font-serif">
               Subscribe to<br />
-              <span className="font-semibold">AI Snippets</span>
+              <span className="font-semibold">SWE Snippets</span>
             </h2>
             <Image
               src="/message.png"
@@ -23,16 +23,15 @@ const NewsLetter = () => {
               priority
             />
           </div>
-          <p className="text-base md:text-lg">
-            Join a growing community of more than<br className="hidden md:block" />
-            <span className="font-medium">260,000 friendly readers.</span>
+          <p className="text-base md:text-lg font-thin">
+            Join a growing community of curious Engineers
           </p>
         </div>
 
         {/* Right Section */}
         <div className="w-full md:w-1/2">
           <p className="text-base md:text-lg mb-8">
-            I share in-depth technical blogs on AI, high-traffic software systems, and personal insights from my weekly experiences—delivered straight to your inbox.
+            Dive into insightful technical blogs on AI, scalable software systems, and daily observations—delivered weekly to your inbox.
           </p>
           
           <div className="flex flex-col md:flex-row gap-4">
