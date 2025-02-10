@@ -53,7 +53,13 @@ const Timeline = () => {
                     <p className="text-gray-700">{event.description}</p>
                 </div>
                 <div className="w-full flex justify-center items-center mb-4 md:mb-0">
-                    <Image src={event.icon} alt="Icon" width={120} height={120} />
+                    <Image 
+                      src={event.icon} 
+                      alt="Icon" 
+                      width={120} 
+                      height={120} 
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
                 </div>
                 </div>
             </div>
