@@ -144,7 +144,6 @@ const Navbar = () => {
       {!isMobileMenuOpen && (
         <ResourcesDropdown 
           isOpen={isResourcesOpen}
-          onClose={() => setIsResourcesOpen(false)}
         />
       )}
     </div>
