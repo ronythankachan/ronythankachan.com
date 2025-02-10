@@ -1,6 +1,12 @@
 import Link from 'next/link';
 
-const ServiceCard = ({ title, description, link }) => (
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  link: string;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, link }) => (
   <Link href={link} className="block">
     <div className="p-4 bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
       <h3 className="text-xl font-bold mb-2">{title}</h3>

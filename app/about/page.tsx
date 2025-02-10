@@ -1,4 +1,5 @@
 import Container from "../components/shared/Container";
+import Timeline from "../components/Timeline";
 import Image from 'next/image';
 
 const facts = [
@@ -11,26 +12,39 @@ const facts = [
 
 const About = () => {
   return (
-    <div className="bg-[#f8f6f3] py-16 rounded-b-3xl">
+    <>
+      <div className="bg-[#f8f6f3] py-16 rounded-b-3xl">
+        <Container>
+          <div className="text-left max-w-3xl mx-auto">
+            <h1 className="text-[24px] md:text-[52px] leading-tight font-serif mb-4 md:mb-6">
+              Hey, I&rsquo;m Rony 👋. I&rsquo;m a <span className="underline underline-offset-4">Senior Software Engineer</span>, Tech blogger, YouTuber, and a lifetime, <span className="underline underline-offset-4">Student</span>.
+            </h1>
+            <h2 className="text-[20px] md:text-[32px] leading-tight font-serif mb-3 md:mb-4">
+              Quick Facts <span className="font-bold">About Me</span>
+            </h2>
+            <ul className="list-none space-y-3 md:space-y-4 text-base md:text-lg md:grid md:grid-cols-2 md:gap-x-8">
+              {facts.map((fact, index) => (
+                <li key={index} className="flex items-center">
+                  <Image src="/checked.png" alt="Checked" width={20} height={20} className="mr-2" />
+                  {fact}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </div>
+
+      {/* Timeline Section */}
       <Container>
-        <div className="text-left max-w-3xl mx-auto">
-          <h1 className="text-[24px] md:text-[52px] leading-tight font-serif mb-4 md:mb-6">
-            Hey, I&rsquo;m Rony 👋. I&rsquo;m a <span className="underline underline-offset-4">Senior Software Engineer</span>, Tech blogger, YouTuber, and a liftime, <span className="underline underline-offset-4">Student</span>.
-          </h1>
-          <h2 className="text-[20px] md:text-[32px] leading-tight font-serif mb-3 md:mb-4">
-            Quick Facts <span className="font-bold">About Me</span>
-          </h2>
-          <ul className="list-none space-y-3 md:space-y-4 text-base md:text-lg md:grid md:grid-cols-2 md:gap-x-8">
-            {facts.map((fact, index) => (
-              <li key={index} className="flex items-start">
-                <Image src="/checked.png" alt="Checked" width={20} height={20} className="mr-4 mt-2" />
-                {fact}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <h1 className="text-[60px] leading-tight font-serif mb-12 mt-12">
+          My Journey from<br />
+          <span className="font-bold underline underline-offset-4 decoration-blue-400">
+            Student to SWE
+          </span>
+        </h1>
+        <Timeline />
       </Container>
-    </div>
+    </>
   );
 };
 
