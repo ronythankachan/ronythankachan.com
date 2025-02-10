@@ -8,35 +8,40 @@ const services: ServiceItem[] = [
     description: "Learn how to start a YouTube channel based on my years of experience.",
     icon: "🎥",
     bgColor: "bg-[#f8f6f3]",
-    hoverColor: "hover:bg-sky-300"
+    hoverColor: "hover:bg-sky-300",
+    href: "/services/youtube"
   },
   {
     title: "Be More Productive",
     description: "How to execute efficiently, make time for what matters and have fun along the way.",
     icon: "⚙️",
     bgColor: "bg-[#f8f6f3]",
-    hoverColor: "hover:bg-purple-300"
+    hoverColor: "hover:bg-purple-300",
+    href: "/services/productivity"
   },
   {
     title: "Build an Online Business",
     description: "How to execute efficiently, make time for what matters and have fun along the way.",
     icon: "💰",
     bgColor: "bg-[#f8f6f3]",
-    hoverColor: "hover:bg-emerald-200"
+    hoverColor: "hover:bg-emerald-200",
+    href: "/services/business"
   }, 
   {
     title: "Another card",
     description: "How to execute efficiently, make time for what matters and have fun along the way.",
     icon: "💰",
     bgColor: "bg-[#f8f6f3]",
-    hoverColor: "hover:bg-blue-200"
+    hoverColor: "hover:bg-blue-200",
+    href: "/services/another"
   }, 
   {
     title: "This is just a card",
     description: "How to execute efficiently, make time for what matters and have fun along the way.",
     icon: "💰",
     bgColor: "bg-[#f8f6f3]",
-    hoverColor: "hover:bg-yellow-200"
+    hoverColor: "hover:bg-yellow-200",
+    href: "/services/card"
   }
 ];
 

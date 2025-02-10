@@ -4,7 +4,7 @@ import NewsLetter from "./NewsLetter";
 
 const Hero = () => {
   return (
-    <div className="bg-[#f8f6f3] py-8">
+    <div className="bg-[#f8f6f3] py-8 rounded-b-3xl">
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="w-full md:w-1/2 order-1 md:order-1">
