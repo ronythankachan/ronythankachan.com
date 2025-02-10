@@ -71,18 +71,6 @@ const Footer = () => {
     </div>
   );
 
-  const BottomLinks = ({ className = "" }) => (
-    <div className={`flex items-center space-x-4 text-gray-600 ${className}`}>
-      <Link href="/privacy" className="hover:underline underline-offset-4">
-        Privacy Policy
-      </Link>
-      <span>/</span>
-      <Link href="/cookies" className="hover:underline underline-offset-4">
-        Cookie Policy
-      </Link>
-    </div>
-  );
-
   return (
     <footer className="max-w-7xl mx-auto px-4 py-20">
       {/* Desktop view */}
@@ -107,7 +95,6 @@ const Footer = () => {
               <FooterLinksList key={category} category={category} links={links} />
             ))}
           </div>
-          <BottomLinks className="justify-end mt-16" />
         </div>
       </div>
 
@@ -129,8 +116,6 @@ const Footer = () => {
               <FooterLinksList key={category} category={category} links={links} />
             ))}
           </div>
-
-          <BottomLinks className="justify-center" />
         </div>
       </div>
 
