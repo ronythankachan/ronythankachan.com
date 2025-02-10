@@ -6,7 +6,7 @@ const services: ServiceItem[] = [
   {
     title: "Grow a YouTube Channel",
     description: "Learn how to start a YouTube channel based on my years of experience.",
-    icon: "🎥",
+    icon: "/youtube-large.png",
     bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-sky-300",
     href: "/services/youtube"
@@ -14,7 +14,7 @@ const services: ServiceItem[] = [
   {
     title: "Be More Productive",
     description: "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "⚙️",
+    icon: "/certificate.png",
     bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-purple-300",
     href: "/services/productivity"
@@ -22,15 +22,15 @@ const services: ServiceItem[] = [
   {
     title: "Build an Online Business",
     description: "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "💰",
+    icon: "/meeting.png",
     bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-emerald-200",
     href: "/services/business"
   }, 
   {
-    title: "Another card",
+    title: "Make money from Software",
     description: "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "💰",
+    icon: "/money-bag.png",
     bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-blue-200",
     href: "/services/another"
@@ -38,7 +38,7 @@ const services: ServiceItem[] = [
   {
     title: "This is just a card",
     description: "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "💰",
+    icon: "/gear.png",
     bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-yellow-200",
     href: "/services/card"
