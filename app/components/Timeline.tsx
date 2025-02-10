@@ -9,20 +9,37 @@ interface TimelineEvent {
 
 const timelineEvents: TimelineEvent[] = [
   {
-    period: "1994 – 2012",
-    description: `I was born in Pakistan in 1994, moving to Lesotho for a while, before going back to Pakistan. Then I ultimately moved to the United Kingdom with my mother and brother in 2003.
-
-    At 12, I learned to code and started earning money as a freelance web designer (this funded my World of Warcraft addiction) – this was my first taste of earning money online. I went to school in Southend-on-Sea, where I also worked as a teaching assistant for a couple of years.`,
+    period: "Sept 2022 - Present",
+    description: `MakeMyTrip, Bengaluru - Senior Software Engineer
+    Re-architected the hotel ingestion process to minimize onboarding delays by introducing multiple Kafka queues for various types of bulk updates, effectively reducing the p95 onboarding time from 23 hours to just 3 minutes.
+    Enhanced the calculation of hotel-to-location distances by implementing the Matrix API with OSRM, replacing Graphhopper. This change led to approximately 1200x improvement in latency during POI location updates.
+    Created filter buckets to filter hotels based on driving duration from the user's location, helping customers choose a property that is close as part of a new nearby hotels page.
+    Ideation and development of an efficient algorithm to apply filters selected by the user on hotels, improving the hotels listing page loading 2X faster.`,
     icon: "/certificate.png"
   },
   {
-    period: "2012 – 2018",
-    description: `After finishing school, I joined the University of Cambridge to study for a Bachelor degree in preclinical medicine and psychology. I started 6med with a friend in 2013. I completed my Bachelors in 2015 and went on to study MBBS at Cambridge, starting this website in 2016, my YouTube channel in 2017 and graduating from Cambridge University in 2018.`,
+    period: "May 2019 - Sept 2022",
+    description: `Cognicor, Kochi - Senior Software Engineer
+    Ideation and end-to-end development of a Dialog Manager for a platform to train and deploy AI chatbots, thereby minimizing the resources spent on customer support and mundane tasks done by businesses.
+    Optimized existing chatbot features by eliminating external framework overhead and implementing the Chain of Responsibility design pattern, reducing response wait times by 140%, and maintained p95 response latency under 500ms for financial advisors through appropriate data structures and code optimizations, ensuring SLA compliance.
+    Led the research and end-to-end development of a chatbot profiling system that delivers personalized responses by analyzing user questions and proactively engaging when needed, which became a key feature in onboarding four major U.S. financial services organizations.`,
     icon: "/thumsup.png"
   },
   {
-    period: "2018 – 2020",
-    description: `After graduating from Cambridge, I went to work as a Junior Doctor in the UK National Health Service. I had high hopes of specialising in plastic surgery at the time. 2018 was also when I had my first 'viral'`,
+    period: "Jun 2018 - May 2019",
+    description: `Infosys, Bengaluru - Systems Engineer Implemented inventory management for automotive parts in a web application, focusing on search, to assist service centres in managing their inventory.`,
+    icon: "/youtube-large.png"
+  },
+  {
+    period: "Nov 2021 - Feb 2022",
+    description: `End-to-end development of a fully functional mobile-responsive site for medicine delivery, as well as an appointment management system that allowed the hospital to provide online and at-home consultations during COVID.
+    The implementation of the online consultation and website assisted the hospital in increasing its revenue by 12X over the previous 3 fiscal years and expanding to 5 more branches this year.`,
+    icon: "/thumsup.png"
+  },
+  {
+    period: "Aug 2014 - May 2018",
+    description: `Rajagiri school of engineering and technology, Kochi
+    B.Tech in Computer Science & Engineering`,
     icon: "/youtube-large.png"
   }
 ];
@@ -30,11 +47,11 @@ const timelineEvents: TimelineEvent[] = [
 const Timeline: React.FC = () => {
   return (
     <div className="mt-16 relative">
-      <div className="absolute left-1/6 top-0 h-full border-l-2 border-gray-300"></div>
+      <div className="absolute left-1/6 top-0 h-full border-l-4 border-orange-500"></div>
       {timelineEvents.map((event, index) => (
         <div key={index} className="flex mb-8 relative">
-          <div className="w-1/6 text-right pr-4">
-            <h3 className="text-lg font-bold mt-16 mr-6">{event.period}</h3>
+          <div className="w-1/4 ">
+            <h3 className="text-lg font-bold font-serif mt-16 ml-6">{event.period}</h3>
           </div>
           <div className="w-5/6 bg-[#f8f6f3] p-16 rounded-3xl relative flex font-serif">
             <div className="w-1/2 flex items-center">
