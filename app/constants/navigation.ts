@@ -15,7 +15,7 @@ export const resourceTopics = [
 ];
 
 export const mainNavLinks = [
-  { label: "My Book", href: "/book" },
-  { label: "YouTube Academy", href: "/academy" },
-  { label: "Productivity Lab", href: "/lab" },
+  { label: "Github", href: "https://github.com/ronythankachan" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Projects", href: "/projects" }
 ]; 

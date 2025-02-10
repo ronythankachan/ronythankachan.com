@@ -87,11 +87,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
               )}
             </div>
             <Link
-              href="/subscribe"
+              href="https://www.linkedin.com/in/ronythankachan"
               className="bg-[#fd976d] text-black px-8 py-3 rounded-full hover:bg-[#fcd56b] transition-colors text-2xl text-center mt-4"
               onClick={onClose}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Join 260k+ Subscribers
+              Follow me on LinkedIn
             </Link>
           </div>
         </div>
