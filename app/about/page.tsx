@@ -25,7 +25,7 @@ const About = () => {
             <ul className="list-none space-y-3 md:space-y-4 text-base md:text-lg md:grid md:grid-cols-2 md:gap-x-8">
               {facts.map((fact, index) => (
                 <li key={index} className="flex items-start">
-                  <Image src="/checked.png" alt="Checked" width={20} height={20} className="mr-4 mt-2" />
+                  <Image src="/checked.png" alt="Checked" width={20} height={20} className="mr-2 mt-2" />
                   {fact}
                 </li>
               ))}

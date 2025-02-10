@@ -17,5 +17,6 @@ export const resourceTopics = [
 export const mainNavLinks = [
   { label: "Github", href: "https://github.com/ronythankachan" },
   { label: "Blogs", href: "/blogs" },
+  { label: "About me", href: "/about" },
   { label: "Projects", href: "/projects" }
 ]; 

@@ -90,6 +90,9 @@ const Navbar = () => {
           <Link href="/blogs" className="text-lg hover:underline hover:underline-offset-4">
             Blogs
           </Link>
+          <Link href="/about" className="text-lg hover:underline hover:underline-offset-4">
+            About me
+          </Link>
           <Link
             href="https://www.linkedin.com/in/ronythankachan/"
             target="_blank"
