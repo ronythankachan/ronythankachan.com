@@ -37,9 +37,11 @@ const Timeline = () => {
         <section className="max-w-[1200px] mx-auto px-4 py-16">
             <h1 className="text-[60px] leading-tight font-serif mb-12">
             My Journey from<br />
-            <span className="font-bold underline underline-offset-4 decoration-blue-400">
             Student to SWE
-            </span>
+            <div className="bottom-[-5px] left-0 right-0 md:right-auto w-[200px] md:w-[400px]">
+                <div className="h-[2px] bg-green-300 mb-[2px] rounded-full opacity-60" />
+                <div className="h-[2px] bg-green-500 rounded-full" />
+              </div>
         </h1>
         <div className="relative">
             <div className="hidden md:block absolute left-1/6 top-0 h-full border-l-4 border-orange-500"></div>
