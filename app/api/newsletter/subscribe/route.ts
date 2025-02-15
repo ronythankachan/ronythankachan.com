@@ -1,9 +1,5 @@
 import { NextResponse } from 'next/server';
-
-const isValidEmail = (email: string): boolean => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
+import { isValidEmail } from '../../../utils/validationUtils';
 
 const createErrorResponse = (message: string, status: number) => {
   return NextResponse.json({ error: message }, { status });

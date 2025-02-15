@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import NewsLetterClient from "./NewsLetterClient";
 
 const NewsLetter = () => {
   return (
@@ -34,22 +35,10 @@ const NewsLetter = () => {
             Dive into insightful technical blogs on AI, scalable software systems, and daily observations—delivered weekly to your inbox.
           </p>
           
-          <div className="flex flex-col md:flex-row gap-4">
-            <input
-              type="email"
-              placeholder="Your email"
-              className="flex-1 px-8 py-3 bg-[#f8f6f3] rounded-full outline-none"
-            />
-            <button 
-              className="px-8 py-3 bg-[#5dccf1] text-black rounded-full font-medium hover:bg-[#4bb8dd] transition-colors whitespace-nowrap"
-            >
-              Subscribe
-            </button>
-          </div>
-          
+          <NewsLetterClient />
+
           <p className="text-sm text-gray-500 mt-4">
-            By submitting this form, you&apos;ll be signed up to my free newsletter. 
-            You can opt-out at any time. 
+            By submitting this form, you'll be signed up to my free newsletter. You can opt-out at any time.
           </p>
         </div>
       </div>
