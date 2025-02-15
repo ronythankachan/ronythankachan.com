@@ -1,71 +1,41 @@
 import React from "react";
 import Link from "next/link";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 import Container from "../components/shared/Container";
 import NewsLetter from "../components/NewsLetter";
+import Image from 'next/image';
 
 interface BlogPost {
   title: string;
   date: string;
+  author: string;
+  bgColor: string;
   excerpt: string;
   slug: string;
   imageUrl?: string;
-  author: string;
-  bgColor: string;
 }
 
-const blogPosts: BlogPost[] = [
-  {
-    title: "How To Never Be Bored at Work",
-    date: "February 5, 2025",
-    excerpt: "The secret to enjoyable work and sustained productivity is to find a way to make what we're doing a little bit more fun.Now, I fully stand by this approach (it's...",
-    slug: "how-to-never-be-bored-at-work",
-    author: "Rony Thankachan",
-    bgColor: "bg-sky-300"
-  },
-  {
-    title: "How to build a time management routine",
-    date: "January 29, 2025",
-    excerpt: "Most of us don't have time to consistently do the things we truly enjoy. Between work, family, friends, staying healthy, and side projects, finding time to do everything we want...",
-    slug: "time-management-routine",
-    author: "Rony Thankachan",
-    bgColor: "bg-purple-300"
-  },
-  {
-    title: "How Procrastination Affects Your Daily Life",
-    date: "January 22, 2025",
-    excerpt: "Procrastination is more than just putting things off - it's a complex behavior that can impact every aspect of your life. Understanding how it affects your daily routine...",
-    slug: "procrastination-effects",
-    author: "Rony Thankachan",
-    bgColor: "bg-yellow-200"
-  },
-  {
-    title: "How Outsourcing Will Help You Grow On YouTube",
-    date: "January 15, 2025",
-    excerpt: "Growing a successful YouTube channel doesn't mean doing everything yourself. Learn how strategic outsourcing can help you scale your content creation and reach...",
-    slug: "outsourcing-youtube-growth",
-    author: "Rony Thankachan",
-    bgColor: "bg-orange-200"
-  },
-  {
-    title: "Building a Personal Brand in 2025",
-    date: "January 8, 2025",
-    excerpt: "In today's digital age, your personal brand is more important than ever. Discover the key strategies and platforms that will help you build an authentic and engaging presence...",
-    slug: "personal-brand-2025",
-    author: "Rony Thankachan",
-    bgColor: "bg-emerald-200"
-  },
-  {
-    title: "The Art of Effective Communication",
-    date: "January 1, 2025",
-    excerpt: "Communication is the cornerstone of success in both personal and professional life. Learn the essential techniques that will help you convey your ideas clearly and build stronger relationships...",
-    slug: "effective-communication",
-    imageUrl: "/gear.png",
-    author: "Rony Thankachan",
-    bgColor: "bg-blue-200"
-  }
-];
-
 const BlogPage = () => {
+  const blogPosts: BlogPost[] = fs.readdirSync(path.join('public', 'blogs')).map((filename) => {
+    const markdownWithMeta = fs.readFileSync(path.join('public', 'blogs', filename), 'utf-8');
+    const { data: frontMatter, content } = matter(markdownWithMeta);
+
+    return {
+      title: frontMatter.title,
+      date: frontMatter.date,
+      author: frontMatter.author,
+      bgColor: frontMatter.bgColor,
+      excerpt: frontMatter.excerpt || content.substring(0, 100) + '...',
+      slug: filename.replace('.md', ''),
+      imageUrl: frontMatter.imageUrl || '',
+    };
+  });
+
+  // Log the slugs outside of the JSX
+  console.log(blogPosts.map((post) => post.slug));
+
   return (
     <>
       <div className="bg-[#f8f6f3] py-8 rounded-b-3xl mb-2">
@@ -86,9 +56,14 @@ const BlogPage = () => {
               key={post.slug}
               className="group p-6 rounded-[20px] transition-all duration-300 transform hover:-translate-y-1 bg-[#f8f6f3]"
             >
-              <div className={`relative w-full aspect-[1.91/1] mb-6 rounded-2xl overflow-hidden ${post.imageUrl ? '' : post.bgColor}`}>
+              <div className={`relative w-full aspect-[1.91/1] mb-6 rounded-2xl overflow-hidden ${post.bgColor}`}>
                 {post.imageUrl ? (
-                  <img src={post.imageUrl} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+                  <Image 
+                    src={post.imageUrl} 
+                    alt={post.title} 
+                    fill
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
                   <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
                     <h2 className="text-[24px] md:text-[32px] font-serif leading-tight mb-6">
