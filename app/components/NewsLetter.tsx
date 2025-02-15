@@ -38,7 +38,7 @@ const NewsLetter = () => {
           <NewsLetterClient />
 
           <p className="text-sm text-gray-500 mt-4">
-            By submitting this form, you'll be signed up to my free newsletter. You can opt-out at any time.
+            By submitting this form, you&apos;ll be signed up to my free newsletter. You can opt-out at any time.
           </p>
         </div>
       </div>

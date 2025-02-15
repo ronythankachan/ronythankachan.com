@@ -5,6 +5,11 @@ const createErrorResponse = (message: string, status: number) => {
   return NextResponse.json({ error: message }, { status });
 }
 
+interface Group {
+  id: string;
+  name: string;
+}
+
 export async function POST(request: Request) {
   const { email } = await request.json();
 
@@ -32,7 +37,7 @@ export async function POST(request: Request) {
     }
 
     const groupData = await groupResponse.json();
-    const group = groupData.data.find((g: any) => g.name === "Newsletter");
+    const group = groupData.data.find((g: Group) => g.name === "Newsletter");
 
     if (!group) {
       console.error('Group not found for Newsletter');
