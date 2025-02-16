@@ -6,13 +6,25 @@ import { notFound } from "next/navigation";
 import BlogPost from "../../components/BlogPost";
 
 interface BlogPostProps {
-  params: {
-    slug: string;
-  };
+  title: string;
+  date: string;
+  content: string;
 }
 
-const BlogPage: React.FC<BlogPostProps> = async ({ params }) => {
-  const { slug } = params;
+interface Params {
+  slug: string;
+}
+
+export async function generateStaticParams() {
+  const files = fs.readdirSync(path.join("public", "blogs"));
+  return files.map((filename) => ({
+    slug: filename.replace(".md", ""),
+  }));
+}
+
+const BlogPage = async ({ params }: { params: Promise<Params> }) => {
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
   const filePath = path.join("public", "blogs", `${slug}.md`);
 
   if (!fs.existsSync(filePath)) {

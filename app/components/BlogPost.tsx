@@ -17,7 +17,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, date, content }) => {
           <p className="text-gray-600 mb-4">{date}</p>
         </Container>
       </div>
-      <div className="prose">
+      <div className="blog-post">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
     </>
