@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Container from "./shared/Container";
 import NewsLetter from "./NewsLetter";
-import HeroSection from "./HeroSection";
+import HeroSection from "./shared/HeroSection";
 
-const Hero: React.FC = React.memo(() => {
+const Greeting: React.FC = React.memo(() => {
   return (
     <HeroSection>
       <Container>
@@ -49,6 +49,4 @@ const Hero: React.FC = React.memo(() => {
   );
 });
 
-Hero.displayName = "Hero";
-
-export default Hero;
+export default Greeting;

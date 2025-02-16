@@ -1,5 +1,5 @@
 import Timeline from "../components/Timeline";
-import Intro from "../components/AboutPageIntro";
+import Intro from "../components/Intro";
 
 const About = () => {
   return (

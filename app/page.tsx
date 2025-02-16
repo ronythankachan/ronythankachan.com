@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./components/Hero";
+import Hero from "./components/Greeting";
 import Services from "./components/Services";
 
 const Home = () => {

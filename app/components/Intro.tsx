@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import HeroSection from "./HeroSection";
+import HeroSection from "./shared/HeroSection";
 import Container from "./shared/Container";
 
 const facts = [
-  "I studied Computer Science and engineering for 4 years graduating in 2018.",
-  "I am currently a Senior Software Engineer II at MakeMyTrip.",
-  "I am a very curious person especially about Software Systems and AI.",
-  "I love riding my bike and hitting the Gym.",
-  "I'm 29 years old. Born in 1995 in India. I now live in Bengaluru, Karnataka.",
+  "I hold a Bachelor's degree in Computer Science and Engineering, graduating in 2018.",
+  "Currently, I am a Senior Software Engineer II at MakeMyTrip.",
+  "I have a keen interest in Software Systems and Artificial Intelligence.",
+  "I enjoy motorcycling, hiking and reading books.",
+  "I am 29 years old, born in 1995 in India, and currently residing in Bengaluru, Karnataka.",
 ];
 
 const AboutPageIntro = () => {
@@ -17,7 +17,7 @@ const AboutPageIntro = () => {
       <Container>
         <div className="text-left max-w-3xl mx-auto">
           <h1 className="text-[24px] md:text-[52px] leading-tight font-serif mb-4 md:mb-6">
-            Hey, I&rsquo;m Rony 👋. I&rsquo;m a{" "}
+            Hey, I&rsquo;m Rony 👋. A{" "}
             <span className="underline underline-offset-4">
               Senior Software Engineer
             </span>
@@ -35,7 +35,7 @@ const AboutPageIntro = () => {
                   alt="Checked"
                   width={20}
                   height={20}
-                  className="mr-2 mt-2"
+                  className="mr-4 mt-2"
                 />
                 {fact}
               </li>
