@@ -49,8 +49,8 @@ const Timeline = () => {
         <h1 className="text-[60px] leading-tight font-serif mb-12">
           My Journey from
           <br />
-          Student to SWE
-          <div className="bottom-[-5px] left-0 right-0 md:right-auto w-[200px] md:w-[400px]">
+          Student to Senior SWE
+          <div className="bottom-[-5px] left-0 right-0 md:right-auto w-[320px] md:w-[610px]">
             <div className="h-[2px] bg-green-300 mb-[2px] rounded-full opacity-60" />
             <div className="h-[2px] bg-green-500 rounded-full" />
           </div>
