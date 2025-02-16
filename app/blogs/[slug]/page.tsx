@@ -3,10 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
-import { remark } from 'remark';
-import html from 'remark-html';
-import Container from "../../components/shared/Container";
-import BlogPost from '../../../components/BlogPost';
+import BlogPost from '../../components/BlogPost';
 
 interface BlogPostProps {
   params: {
