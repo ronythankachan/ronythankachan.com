@@ -59,14 +59,14 @@ const Timeline = () => {
           <div className="hidden md:block absolute left-1/6 top-0 h-full border-l-4 border-orange-500"></div>
           {timelineEvents.map((event, index) => (
             <div key={index} className="flex flex-col md:flex-row relative">
-              <div className="w-full md:w-1/4">
-                <h3 className="text-lg font-bold font-serif mt-8 ml-6 mb-4 md:mb-0">
+              <div className="w-full md:w-1/4 mb-4">
+                <h3 className="text-lg font-bold font-serif mt-8 ml-6">
                   {event.company}
                 </h3>
-                <h4 className="text-md font-medium font-serif ml-6 mb-2 md:mb-0">
+                <h4 className="text-md font-medium font-serif ml-6">
                   {event.title}
                 </h4>
-                <h5 className="text-sm font-light font-serif ml-6 mb-4 md:mb-0">
+                <h5 className="text-sm font-light font-serif ml-6">
                   ({event.period})
                 </h5>
               </div>
@@ -74,12 +74,12 @@ const Timeline = () => {
                 <div className="w-full flex items-center">
                   <p className="text-gray-700">{event.description}</p>
                 </div>
-                <div className="w-full flex justify-center items-center mb-4 md:mb-0">
+                <div className="w-full flex justify-center items-center py-8 md:mb-0">
                   <Image
                     src={event.icon}
                     alt="Icon"
-                    width={120}
-                    height={120}
+                    width={140}
+                    height={140}
                     style={{ width: "auto", height: "auto" }}
                   />
                 </div>
