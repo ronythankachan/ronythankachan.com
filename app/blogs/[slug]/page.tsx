@@ -5,12 +5,6 @@ import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import BlogPost from "../../components/BlogPost";
 
-interface BlogPostProps {
-  title: string;
-  date: string;
-  content: string;
-}
-
 interface Params {
   slug: string;
 }
