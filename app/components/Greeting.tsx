@@ -49,4 +49,6 @@ const Greeting: React.FC = React.memo(() => {
   );
 });
 
+Greeting.displayName = "Greeting";
+
 export default Greeting;
