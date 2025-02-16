@@ -49,7 +49,7 @@ const BlogPage = () => {
       </div>
 
       <Container className="py-16">
-        <h1 className="text-[60px] leading-tight font-serif mb-12">
+        <h1 className="text-[60px] leading-tight mb-12">
           All Recent Articles
         </h1>
 

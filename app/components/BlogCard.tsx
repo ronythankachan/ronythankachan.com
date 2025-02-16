@@ -18,7 +18,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
     <Link href={`/blogs/${post.slug}`} key={post.slug}>
       <CardContainer>
         <div
-          className={`relative w-full aspect-[1.91/1] mb-6 rounded-2xl overflow-hidden ${post.bgColor}`}
+          className={`relative w-full aspect-[1.91/1] mb-6 rounded-2xl overflow-hidden font-serif ${post.bgColor}`}
         >
           {post.imageUrl ? (
             <Image
@@ -29,22 +29,21 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
             />
           ) : (
             <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
-              <h2 className="text-[24px] md:text-[32px] font-serif leading-tight mb-6">
+              <h2 className="text-[24px] md:text-[32px] leading-tight mb-6">
                 {post.title}
               </h2>
               <div className="flex items-center">
-                <span className="text-xs md:text-sm font-medium font-serif">
+                <span className="text-xs md:text-sm font-medium">
                   {post.author}
                 </span>
               </div>
             </div>
           )}
         </div>
-
-        <h2 className="text-[28px] font-serif mb-3 leading-tight">
-          {post.title}
-        </h2>
-        <p className="text-gray-600 mb-4">{post.date}</p>
+        <div className="font-serif">
+          <h2 className="text-[28px] mb-3 leading-tight">{post.title}</h2>
+          <p className="text-gray-600 mb-4">{post.date}</p>
+        </div>
         <p className="text-gray-800 mb-6">{post.excerpt}</p>
 
         <div className="flex items-center">

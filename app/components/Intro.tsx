@@ -15,8 +15,8 @@ const AboutPageIntro = () => {
   return (
     <HeroSection>
       <Container>
-        <div className="text-left max-w-3xl mx-auto">
-          <h1 className="text-[24px] md:text-[52px] leading-tight font-serif mb-4 md:mb-6">
+        <div className="text-left max-w-3xl mx-auto font-serif">
+          <h1 className="text-[24px] md:text-[52px] leading-tight  mb-4 md:mb-6">
             Hey, I&rsquo;m Rony 👋. A{" "}
             <span className="underline underline-offset-4">
               Senior Software Engineer
@@ -24,8 +24,11 @@ const AboutPageIntro = () => {
             , tech blogger, YouTuber, and a lifelong{" "}
             <span className="underline underline-offset-4">student</span>.
           </h1>
-          <h2 className="text-[20px] md:text-[32px] leading-tight font-serif mb-3 md:mb-4">
-            Quick Facts <span className="font-bold">About Me</span>
+          <h2 className="text-[20px] md:text-[32px] leading-tight mb-3 md:mb-4">
+            Quick Facts{" "}
+            <span className="font-bold underline underline-offset-4">
+              About Me
+            </span>
           </h2>
           <ul className="list-none space-y-3 md:space-y-4 text-base md:text-lg md:grid md:grid-cols-2 md:gap-x-8">
             {facts.map((fact, index) => (
