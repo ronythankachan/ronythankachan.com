@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import CardContainer from "./shared/CardContainer";
 
 interface ServiceCardProps {
   title: string;
@@ -17,11 +18,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   icon,
   bgColor,
   hoverColor,
-  href
+  href,
 }) => {
   return (
-    <Link href={href} className="block">
-      <div className={`p-10 rounded-[20px] transition-all duration-300 transform hover:-translate-y-1 ${bgColor} ${hoverColor} group`}>
+    <Link href={href}>
+      <CardContainer className={`${bgColor} ${hoverColor}`}>
         <div className="text-3xl mb-4">
           <Image src={icon} alt={`${title} icon`} width={100} height={100} />
         </div>
@@ -29,9 +30,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <p className="text-gray-600 text-base mb-4">{description}</p>
         <span className="inline-flex items-center space-x-2 font-medium border-b border-black hover:opacity-80">
           <span>Get started</span>
-          <span className="transform transition-transform duration-300 group-hover:translate-x-2">→</span>
+          <span className="transform transition-transform duration-300 group-hover:translate-x-2">
+            →
+          </span>
         </span>
-      </div>
+      </CardContainer>
     </Link>
   );
 };

@@ -2,12 +2,9 @@
 title: "Sample Blog Post 1"
 date: "2023-10-01"
 author: "John Doe"
-excerpt: "This is the excerpt of the first sample blog post."
 bgColor: "bg-blue-100"
 imageUrl: "/rony.png"
 ---
-
-# Introduction to Markdown
 
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world's most popular markup languages.
 
@@ -37,5 +34,3 @@ greet();
 ```
 
 Look! You can see my backticks.
-
-
