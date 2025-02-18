@@ -43,7 +43,7 @@ const NewsLetter: React.FC<NewsLetterProps> = ({
         </div>
 
         {/* Right Section */}
-        <div className="w-full md:w-1/2">
+        <div className={`w-full ${isVertical ? "" : "md:w-1/2"}`}>
           <p className="text-base md:text-lg mb-8">
             Dive into insightful technical blogs on AI, scalable software
             systems, and daily observations—delivered weekly to your inbox.

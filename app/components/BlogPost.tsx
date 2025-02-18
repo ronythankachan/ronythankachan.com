@@ -12,12 +12,12 @@ interface BlogPostProps {
 const BlogPost: React.FC<BlogPostProps> = ({ content, title, author }) => {
   return (
     <>
-      <div className="flex justify-between">
-        <div className="w-3/5">
+      <div className="flex justify-between flex-col md:flex-row">
+        <div className="md:w-3/5">
           <h1>{title}</h1>
           <p>{author}</p>
         </div>
-        <div className="w-2/5">
+        <div className="md:w-2/5">
           <NewsLetter direction="vertical" />
         </div>
       </div>
