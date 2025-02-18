@@ -24,7 +24,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
       <Container>
         <div className="flex justify-between flex-col md:flex-row gap-16 mt-[-100px]">
           <div
-            className={`relative w-full h-80 aspect-[1.91/1] mb-6 rounded-3xl overflow-hidden font-serif ${
+            className={`relative w-full h-52 md:h-80 aspect-[1.91/1] mb-6 rounded-3xl overflow-hidden font-serif ${
               !imageUrl ? bgColor : ""
             }`}
           >
@@ -49,7 +49,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
               </div>
             )}
           </div>
-          <div className="md:w-2/5 mt-[-40px]">
+          <div className="hidden md:block md:w-2/5 mt-[-40px]">
             <NewsLetter direction="vertical" />
           </div>
         </div>
