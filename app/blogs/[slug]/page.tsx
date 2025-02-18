@@ -43,7 +43,7 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
     <>
       <HeroSection>
         <Container>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-4">
             {data.category.map((category: string) => (
               <p
                 className={`px-4 py-1 rounded-full ${
@@ -58,7 +58,7 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
           <h1 className="text-[60px] leading-tight font-serif mb-12 font-semibold">
             {data.title}
           </h1>
-          <div className="flex items-center gap-6 font-serif text-lg mb-20">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 font-serif text-lg mb-20">
             <Image
               src={"/rony2.jpeg"}
               alt={data.title}
@@ -67,15 +67,13 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
               className="rounded-full mr-4"
             />
             <p>{"Rony Thankachan"}</p>
-            <p>/</p>
+            <p className="hidden md:block">/</p>
             <p>{data.date}</p>
-            <p>/</p>
+            <p className="hidden md:block">/</p>
             <p>Share on:</p>
             <div className="flex items-center gap-2">
               <Link
-                href={`https://www.linkedin.com/shareArticle?mini=true&url=https://ronythankachan.com/blogs/${slug}&text=${encodeURIComponent(
-                  data.title
-                )}`}
+                href={""}
                 className="p-3 flex items-center justify-center rounded-full bg-white hover:bg-blue-400"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -88,9 +86,7 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
                 />
               </Link>
               <Link
-                href={`https://twitter.com/intent/tweet?url=https://ronythankachan.com/blogs/${slug}&text=${encodeURIComponent(
-                  data.title
-                )}`}
+                href={""}
                 className="p-3 flex items-center justify-center rounded-full bg-white hover:bg-blue-400"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -109,8 +105,8 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
       <BlogPost
         author={"Rony Thankachan"}
         bgColor={data.bgColor}
-        imageUrl={data.imageUrl}
         title={data.title}
+        imageUrl={data.imageUrl}
         content={content}
       />
     </>

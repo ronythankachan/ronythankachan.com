@@ -16,7 +16,7 @@ interface BlogPost {
 const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
   return (
     <Link href={`/blogs/${post.slug}`} key={post.slug}>
-      <CardContainer className="h-[600px] flex flex-col justify-between">
+      <CardContainer className="h-[500px] md:h-[600px] flex flex-col justify-between">
         <div
           className={`relative w-full h-[300px] mb-6 rounded-2xl overflow-hidden font-serif ${
             post.imageUrl ? "" : post.bgColor
