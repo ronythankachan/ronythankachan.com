@@ -2,6 +2,7 @@
 title: "Sample Blog Post 2"
 date: "2023-10-02"
 author: "Jane Smith"
+category: ["AI", "Technology"]
 bgColor: "bg-green-100"
 ---
 

@@ -2,6 +2,7 @@
 title: "Why AGI is not coming in 2025. A technical perspective"
 date: "2023-10-01"
 author: "John Doe"
+category: ["AI", "Technology"]
 bgColor: "bg-blue-100"
 imageUrl: "/rony.png"
 ---
