@@ -18,14 +18,17 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
     <Link href={`/blogs/${post.slug}`} key={post.slug}>
       <CardContainer>
         <div
-          className={`relative w-full aspect-[1.91/1] mb-6 rounded-2xl overflow-hidden font-serif ${post.bgColor}`}
+          className={`relative w-full aspect-[1.91/1] mb-6 rounded-2xl overflow-hidden font-serif ${
+            post.imageUrl ? "" : post.bgColor
+          }`}
         >
           {post.imageUrl ? (
             <Image
               src={post.imageUrl}
               alt={post.title}
               fill
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
+              style={{ objectFit: "contain" }}
             />
           ) : (
             <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">

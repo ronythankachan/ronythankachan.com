@@ -14,4 +14,5 @@ export default {
     },
   },
   plugins: [],
+  safelist: ["bg-red-200", "bg-green-200", "bg-orange-200"],
 } satisfies Config;
