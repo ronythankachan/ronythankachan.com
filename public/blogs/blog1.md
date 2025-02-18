@@ -1,5 +1,5 @@
 ---
-title: "Sample Blog Post 1"
+title: "Why AGI is not coming in 2025. A technical perspective"
 date: "2023-10-01"
 author: "John Doe"
 bgColor: "bg-blue-100"

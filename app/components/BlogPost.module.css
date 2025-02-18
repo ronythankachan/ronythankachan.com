@@ -1,0 +1,15 @@
+.blogPost {
+  margin-top: 12px;
+  background-color: #f8f6f3;
+  font-family: serif;
+}
+
+.blogPost h1 {
+  font-size: 60px;
+  line-height: 1.25;
+  font-family: serif;
+  margin-bottom: 3rem;
+}
+.blogPost h2 {
+  font-size: large;
+}
