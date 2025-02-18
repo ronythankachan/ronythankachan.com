@@ -73,7 +73,9 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
             <p>Share on:</p>
             <div className="flex items-center gap-2">
               <Link
-                href={""}
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=https://ronythankachan.com/blogs/${slug}&text=${encodeURIComponent(
+                  data.title
+                )}`}
                 className="p-3 flex items-center justify-center rounded-full bg-white hover:bg-blue-400"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,7 +88,9 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
                 />
               </Link>
               <Link
-                href={""}
+                href={`https://twitter.com/intent/tweet?url=https://ronythankachan.com/blogs/${slug}&text=${encodeURIComponent(
+                  data.title
+                )}`}
                 className="p-3 flex items-center justify-center rounded-full bg-white hover:bg-blue-400"
                 target="_blank"
                 rel="noopener noreferrer"
