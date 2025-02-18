@@ -4,10 +4,22 @@ import React from "react";
 import Image from "next/image";
 import NewsLetterClient from "./NewsLetterClient";
 
-const NewsLetter = () => {
+interface NewsLetterProps {
+  direction?: "vertical" | "horizontal";
+}
+
+const NewsLetter: React.FC<NewsLetterProps> = ({
+  direction = "horizontal",
+}) => {
+  const isVertical = direction === "vertical";
+
   return (
     <div className="bg-white rounded-[32px] p-8 md:p-16 mt-10 shadow-xl">
-      <div className="flex flex-col md:flex-row md:gap-16 gap-8">
+      <div
+        className={`flex flex-col ${
+          isVertical ? "" : "md:flex-row"
+        } md:gap-16 gap-8`}
+      >
         {/* Left Section */}
         <div className="w-full md:w-1/2">
           <div className="flex items-center gap-4 mb-4">
@@ -37,7 +49,7 @@ const NewsLetter = () => {
             systems, and daily observations—delivered weekly to your inbox.
           </p>
 
-          <NewsLetterClient />
+          <NewsLetterClient direction={direction} />
 
           <p className="text-sm text-gray-500 mt-4">
             By submitting this form, you&apos;ll be signed up to my free
