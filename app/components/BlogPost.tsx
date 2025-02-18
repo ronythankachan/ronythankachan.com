@@ -1,25 +1,28 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import Container from "./shared/Container";
+import NewsLetter from "./NewsLetter";
 
 interface BlogPostProps {
-  title: string;
-  date: string;
   content: string;
+  title: string;
+  author: string;
 }
 
-const BlogPost: React.FC<BlogPostProps> = ({ title, date, content }) => {
+const BlogPost: React.FC<BlogPostProps> = ({ content, title, author }) => {
   return (
     <>
-      <div className="bg-[#f8f6f3] py-16 rounded-b-3xl">
-        <Container>
-          <h1 className="text-3xl font-bold mb-2">{title}</h1>
-          <p className="text-gray-600 mb-4">{date}</p>
-        </Container>
+      <div className="flex justify-between">
+        <div>
+          <h1>{title}</h1>
+          <p>{author}</p>
+        </div>
+        <NewsLetter />
       </div>
-      <div className="blog-post">
+
+      <Container>
         <ReactMarkdown>{content}</ReactMarkdown>
-      </div>
+      </Container>
     </>
   );
 };
