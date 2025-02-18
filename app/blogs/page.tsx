@@ -51,7 +51,9 @@ const BlogPage = () => {
       </div>
 
       <Container className="py-16">
-        <h1 className="text-[60px] leading-tight mb-12">All Recent Articles</h1>
+        <h1 className="text-[60px] leading-tight font-serif mb-12">
+          Recent Blogs
+        </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post) => (
