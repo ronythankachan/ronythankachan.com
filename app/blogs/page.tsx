@@ -12,6 +12,7 @@ interface BlogPost {
   author: string;
   bgColor: string;
   excerpt: string;
+  category: string[];
   slug: string;
   imageUrl?: string;
 }
@@ -32,6 +33,7 @@ const BlogPage = () => {
         author: frontMatter.author,
         bgColor: frontMatter.bgColor,
         excerpt: frontMatter.excerpt || content.substring(0, 100) + "...",
+        category: frontMatter.category || [],
         slug: filename.replace(".md", ""),
         imageUrl: frontMatter.imageUrl || "",
       };
@@ -49,8 +51,8 @@ const BlogPage = () => {
       </div>
 
       <Container className="py-16">
-        <h1 className="text-[60px] leading-tight mb-12">
-          All Recent Articles
+        <h1 className="text-[60px] leading-tight font-serif mb-12">
+          Recent Blogs
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

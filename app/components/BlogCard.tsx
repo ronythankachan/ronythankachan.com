@@ -16,9 +16,11 @@ interface BlogPost {
 const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
   return (
     <Link href={`/blogs/${post.slug}`} key={post.slug}>
-      <CardContainer>
+      <CardContainer className="h-[600px] flex flex-col justify-between">
         <div
-          className={`relative w-full aspect-[1.91/1] mb-6 rounded-2xl overflow-hidden font-serif ${post.bgColor}`}
+          className={`relative w-full h-[300px] mb-6 rounded-2xl overflow-hidden font-serif ${
+            post.imageUrl ? "" : post.bgColor
+          }`}
         >
           {post.imageUrl ? (
             <Image
@@ -26,6 +28,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
               alt={post.title}
               fill
               className="w-full h-full object-cover"
+              style={{ objectFit: "cover" }}
             />
           ) : (
             <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
@@ -40,12 +43,11 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
             </div>
           )}
         </div>
-        <div className="font-serif">
+        <div className="font-serif flex-grow">
           <h2 className="text-[28px] mb-3 leading-tight">{post.title}</h2>
           <p className="text-gray-600 mb-4">{post.date}</p>
+          <p className="text-gray-800 mb-6">{post.excerpt}</p>
         </div>
-        <p className="text-gray-800 mb-6">{post.excerpt}</p>
-
         <div className="flex items-center">
           <span className="inline-flex items-center space-x-2 font-medium border-b border-black">
             <span>Continue Reading</span>
