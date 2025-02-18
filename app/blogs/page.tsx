@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import Container from "../components/shared/Container";
 import NewsLetter from "../components/NewsLetter";
 import BlogCard from "../components/BlogCard";
+import HeroSection from "../components/shared/HeroSection";
 
 interface BlogPost {
   title: string;
@@ -44,11 +45,11 @@ const BlogPage = () => {
 
   return (
     <>
-      <div className="bg-[#f8f6f3] py-8 rounded-b-3xl mb-2">
+      <HeroSection>
         <Container>
           <NewsLetter />
         </Container>
-      </div>
+      </HeroSection>
 
       <Container className="py-16">
         <h1 className="text-[60px] leading-tight font-serif mb-12">
