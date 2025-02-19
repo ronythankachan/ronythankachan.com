@@ -55,9 +55,10 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
               </p>
             ))}
           </div>
-          <h1 className="text-[60px] leading-tight font-serif mb-12 font-semibold">
-            {data.title}
-          </h1>
+          <h1
+            className="text-[60px] leading-tight font-serif mb-12"
+            dangerouslySetInnerHTML={{ __html: data.title }}
+          />
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 font-serif text-lg mb-20">
             <Image
               src={"/rony2.jpeg"}
@@ -73,7 +74,9 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
             <p>Share on:</p>
             <div className="flex items-center gap-2">
               <Link
-                href={""}
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=https://ronythankachan.com/blogs/${slug}&text=${encodeURIComponent(
+                  data.title
+                )}`}
                 className="p-3 flex items-center justify-center rounded-full bg-white hover:bg-blue-400"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,7 +89,9 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
                 />
               </Link>
               <Link
-                href={""}
+                href={`https://twitter.com/intent/tweet?url=https://ronythankachan.com/blogs/${slug}&text=${encodeURIComponent(
+                  data.title
+                )}`}
                 className="p-3 flex items-center justify-center rounded-full bg-white hover:bg-blue-400"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -97,7 +102,7 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
                   width={18}
                   height={18}
                 />
-              </Link>{" "}
+              </Link>
             </div>
           </div>
         </Container>

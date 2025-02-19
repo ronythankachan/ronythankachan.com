@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import Container from "./shared/Container";
 import NewsLetter from "./NewsLetter";
 import Image from "next/image";
+import styles from "./BlogPost.module.css";
 
 interface BlogPostProps {
   content: string;
@@ -22,38 +23,46 @@ const BlogPost: React.FC<BlogPostProps> = ({
   return (
     <>
       <Container>
-        <div className="flex justify-between flex-col md:flex-row gap-16 mt-[-100px]">
-          <div
-            className={`relative w-full h-52 md:h-80 aspect-[1.91/1] mb-6 rounded-3xl overflow-hidden font-serif ${
-              !imageUrl ? bgColor : ""
-            }`}
-          >
-            {imageUrl ? (
-              <Image
-                src={imageUrl}
-                alt={title}
-                fill
-                className="w-full h-full object-contain"
-                style={{ objectFit: "contain" }}
-              />
-            ) : (
-              <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
-                <h2 className="text-[24px] md:text-[32px] leading-tight mb-6">
-                  {title}
-                </h2>
-                <div className="flex items-center">
-                  <span className="text-xs md:text-sm font-medium">
-                    {author}
-                  </span>
+        <div className="flex flex-col md:flex-row gap-16 mt-[-100px]">
+          <div>
+            <div
+              className={`w-full h-52 md:h-80 mb-6 md:mb-16 rounded-3xl overflow-hidden font-serif ${
+                !imageUrl ? bgColor : ""
+              }`}
+            >
+              {imageUrl ? (
+                <Image
+                  src={imageUrl}
+                  alt={title}
+                  fill
+                  className="w-full h-full object-contain"
+                  style={{ objectFit: "contain" }}
+                />
+              ) : (
+                <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
+                  <h2
+                    className="text-[24px] md:text-[32px] leading-tight mb-6"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
+                  <div className="flex items-center">
+                    <span className="text-xs md:text-sm font-medium">
+                      {author}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
+            <div className={styles["blog-post-content"]}>
+              <ReactMarkdown>{content}</ReactMarkdown>
+            </div>
           </div>
+
           <div className="hidden md:block md:w-2/5 mt-[-40px]">
-            <NewsLetter direction="vertical" />
+            <div className="sticky top-0" style={{ height: "100vh" }}>
+              <NewsLetter direction="vertical" />
+            </div>
           </div>
         </div>
-        <ReactMarkdown>{content}</ReactMarkdown>
       </Container>
     </>
   );

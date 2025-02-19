@@ -1,15 +1,66 @@
-.blogPost {
-  margin-top: 12px;
-  background-color: #f8f6f3;
-  font-family: serif;
+.blog-post-content {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.blogPost h1 {
-  font-size: 60px;
+.blog-post-content h1,
+.blog-post-content h2,
+.blog-post-content h3 {
+  font-family: "Georgia", serif;
   line-height: 1.25;
-  font-family: serif;
-  margin-bottom: 3rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #222;
 }
-.blogPost h2 {
-  font-size: large;
+
+.blog-post-content h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.blog-post-content h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.blog-post-content h3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.blog-post-content p {
+  font-size: 18px;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.blog-post-content li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.blog-post-content a {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+.blog-post-content blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 16px;
+  margin-left: 0;
+  color: #555;
+  font-style: italic;
+}
+
+.blog-post-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
