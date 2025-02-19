@@ -4,7 +4,7 @@ date: "2023-10-01"
 author: "John Doe"
 category: ["AI", "Technology"]
 bgColor: "bg-red-200"
-imageUrl: "/rony.png"
+# imageUrl: "/rony.png"
 ---
 
 Artificial General Intelligence (AGI) refers to machines that possess human-like cognitive abilities—reasoning, learning, and problem-solving across diverse domains without needing task-specific training. Despite rapid progress in AI, including large language models (LLMs) like GPT-4 and Gemini, AGI remains elusive. This article explores the technical limitations preventing AGI's arrival by 2025.

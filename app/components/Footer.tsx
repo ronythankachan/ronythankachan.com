@@ -144,7 +144,8 @@ const Footer = () => {
   );
 
   return (
-    <footer className="max-w-7xl mx-auto px-4 py-20">
+    <footer className="max-w-7xl mx-auto px-4 py-20 mt-10">
+      <hr className="border-t border-gray-300 mb-8" />
       {/* Desktop view */}
       <div className="hidden lg:block">{renderFooterContent(false)}</div>
 

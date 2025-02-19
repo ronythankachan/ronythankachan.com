@@ -45,8 +45,8 @@ const timelineEvents: TimelineEvent[] = [
 const Timeline = () => {
   return (
     <Container>
-      <section className="max-w-[1200px] mx-auto px-4 py-16">
-        <h1 className="text-[60px] leading-tight font-serif mb-12">
+      <section className="max-w-[1200px] mx-auto pt-12 md:pt-16">
+        <h1 className="text-[60px] leading-tight font-serif mb-6 md:mb-12">
           My Journey from
           <br />
           Student to Senior SWE
@@ -70,7 +70,7 @@ const Timeline = () => {
                   ({event.period})
                 </h5>
               </div>
-              <div className="w-full md:w-5/6 bg-[#f8f6f3] p-8 rounded-3xl md:mb-10 relative flex flex-col-reverse md:flex-row font-serif md:ml-8">
+              <div className="w-full md:w-5/6 bg-[#f8f6f3] p-8 rounded-3xl relative flex flex-col-reverse md:flex-row font-serif md:ml-8 md:mb-10">
                 <div className="w-full flex items-center">
                   <p className="text-gray-700">{event.description}</p>
                 </div>

@@ -15,8 +15,8 @@ const AboutPageIntro = () => {
   return (
     <HeroSection>
       <Container>
-        <div className="text-left max-w-3xl px-10 md:mx-auto font-serif">
-          <h1 className="text-[24px] md:text-[52px] leading-tight  mb-4 md:mb-6">
+        <div className="text-left max-w-3xl px-2 md:px-10 md:mx-auto font-serif">
+          <h1 className="text-3xl md:text-[52px] leading-tight  mb-4 md:mb-6">
             Hey, I&rsquo;m Rony 👋. A{" "}
             <span className="underline underline-offset-4">
               Senior Software Engineer
