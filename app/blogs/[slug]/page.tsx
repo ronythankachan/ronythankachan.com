@@ -55,7 +55,7 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
               </p>
             ))}
           </div>
-          <h1 className="text-[60px] leading-tight font-serif mb-12 font-semibold">
+          <h1 className="text-[60px] leading-tight font-serif mb-12">
             {data.title}
           </h1>
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 font-serif text-lg mb-20">
