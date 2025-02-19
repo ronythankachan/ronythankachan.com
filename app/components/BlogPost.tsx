@@ -40,9 +40,10 @@ const BlogPost: React.FC<BlogPostProps> = ({
                 />
               ) : (
                 <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
-                  <h2 className="text-[24px] md:text-[32px] leading-tight mb-6">
-                    {title}
-                  </h2>
+                  <h2
+                    className="text-[24px] md:text-[32px] leading-tight mb-6"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
                   <div className="flex items-center">
                     <span className="text-xs md:text-sm font-medium">
                       {author}

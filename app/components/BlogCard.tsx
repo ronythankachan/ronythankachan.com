@@ -32,9 +32,10 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
             />
           ) : (
             <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
-              <h2 className="text-[24px] md:text-[32px] leading-tight mb-6">
-                {post.title}
-              </h2>
+              <h2
+                className="text-[24px] md:text-[32px] leading-tight mb-6"
+                dangerouslySetInnerHTML={{ __html: post.title }}
+              />
               <div className="flex items-center">
                 <span className="text-xs md:text-sm font-medium">
                   {post.author}
@@ -44,7 +45,10 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
           )}
         </div>
         <div className="font-serif flex-grow">
-          <h2 className="text-[28px] mb-3 leading-tight">{post.title}</h2>
+          <h2
+            className="text-[28px] mb-3 leading-tight"
+            dangerouslySetInnerHTML={{ __html: post.title }}
+          />
           <p className="text-gray-600 mb-4">{post.date}</p>
           <p className="text-gray-800 mb-6">{post.excerpt}</p>
         </div>
