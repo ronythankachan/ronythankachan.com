@@ -38,7 +38,8 @@ const BlogPage = () => {
         slug: filename.replace(".md", ""),
         imageUrl: frontMatter.imageUrl || "",
       };
-    });
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   // Log the slugs outside of the JSX
   console.log(blogPosts.map((post) => post.slug));
