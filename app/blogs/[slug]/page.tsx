@@ -56,7 +56,7 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
             ))}
           </div>
           <h1
-            className="text-[60px] leading-tight font-serif mb-12"
+            className="text-[60px] leading-tight font-serif mb-12 md:w-3/4"
             dangerouslySetInnerHTML={{ __html: data.title }}
           />
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 font-serif text-lg mb-20">

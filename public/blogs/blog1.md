@@ -1,6 +1,6 @@
 ---
-title: "Why AGI is not coming in 2025. <br/>A technical perspective"
-date: "2023-10-01"
+title: "Why AGI is not coming in 2025. A technical perspective"
+date: "2025-02-12"
 author: "Rony Thankachan"
 category: ["AI", "Technology"]
 bgColor: "bg-red-200"
