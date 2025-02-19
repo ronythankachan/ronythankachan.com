@@ -18,7 +18,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
     <Link href={`/blogs/${post.slug}`} key={post.slug}>
       <CardContainer className="h-[500px] md:h-[600px] flex flex-col justify-between">
         <div
-          className={`relative w-full h-[300px] mb-6 rounded-2xl overflow-hidden font-serif ${
+          className={`relative w-full h-[300px] mb-6 rounded-2xl overflow-hidden font-serif min-h-[250px] ${
             post.imageUrl ? "" : post.bgColor
           }`}
         >

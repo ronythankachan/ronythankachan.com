@@ -1,5 +1,5 @@
 ---
-title: "Sample Blog Post 2"
+title: "Sample Blog Post 2. and this is the btest"
 date: "2023-10-02"
 author: "Rony Thankachan"
 category: ["AI", "Technology"]
