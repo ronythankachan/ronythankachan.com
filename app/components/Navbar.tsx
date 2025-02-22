@@ -118,9 +118,11 @@ const Navbar = () => {
       {/* Tablet/Mobile Navbar */}
       <nav className="lg:hidden flex justify-between items-center py-4 px-4 mt-8 rounded-t-3xl md:px-8 bg-grayBackground">
         {/* Logo/Brand */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="text-[#5dccf1] text-3xl font-serif">RT</div>
-          <span className="text-2xl">Rony Thankachan</span>
+        <Link
+          href="/"
+          className="text-blue-500 text-4xl font-bold font-sacramento"
+        >
+          Rony Thankachan
         </Link>
 
         <div className="flex items-center gap-4">
