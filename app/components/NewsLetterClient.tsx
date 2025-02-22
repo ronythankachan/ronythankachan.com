@@ -81,11 +81,11 @@ const NewsLetterClient: React.FC<NewsLetterClientProps> = ({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="flex-1 px-8 py-3 bg-[#f8f6f3] rounded-full outline-none"
+          className="flex-1 px-8 py-3 bg-grayBackground rounded-full outline-none"
         />
         <button
           onClick={handleSubscribe}
-          className={`px-8 py-3 bg-[#5dccf1] text-black rounded-full font-medium hover:bg-[#4bb8dd] transition-colors whitespace-nowrap flex items-center justify-center`}
+          className={`px-8 py-3 bg-sky-400 text-black rounded-full font-medium hover:bg-sky-200 transition-colors whitespace-nowrap flex items-center justify-center`}
           disabled={isLoading}
         >
           {isLoading ? (

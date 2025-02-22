@@ -10,6 +10,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        grayBackground: "#f8f6f3",
+      },
+      fontFamily: {
+        sacramento: ["Sacramento", "sans-serif"],
       },
     },
   },

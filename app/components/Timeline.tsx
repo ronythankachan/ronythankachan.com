@@ -70,7 +70,7 @@ const Timeline = () => {
                   ({event.period})
                 </h5>
               </div>
-              <div className="w-full md:w-5/6 bg-[#f8f6f3] p-8 rounded-3xl relative flex flex-col-reverse md:flex-row font-serif md:ml-8 md:mb-10">
+              <div className="w-full md:w-5/6 bg-grayBackground p-8 rounded-3xl relative flex flex-col-reverse md:flex-row font-serif md:ml-8 md:mb-10">
                 <div className="w-full flex items-center">
                   <p className="text-gray-700">{event.description}</p>
                 </div>

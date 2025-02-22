@@ -8,7 +8,6 @@ const services: ServiceItem[] = [
     description:
       "Learn how to start a YouTube channel based on my years of experience. Learn how to start a YouTube channel based on my years of experience.",
     icon: "/youtube-large.png",
-    bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-sky-300",
     href: "/services/youtube",
   },
@@ -17,7 +16,6 @@ const services: ServiceItem[] = [
     description:
       "How to execute efficiently, make time for what matters and have fun along the way.",
     icon: "/certificate.png",
-    bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-purple-300",
     href: "/services/productivity",
   },
@@ -26,7 +24,6 @@ const services: ServiceItem[] = [
     description:
       "How to execute efficiently, make time for what matters and have fun along the way.",
     icon: "/meeting.png",
-    bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-emerald-200",
     href: "/services/business",
   },
@@ -35,7 +32,6 @@ const services: ServiceItem[] = [
     description:
       "How to execute efficiently, make time for what matters and have fun along the way.",
     icon: "/money-bag.png",
-    bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-blue-200",
     href: "/services/another",
   },
@@ -44,7 +40,6 @@ const services: ServiceItem[] = [
     description:
       "How to execute efficiently, make time for what matters and have fun along the way.",
     icon: "/gear.png",
-    bgColor: "bg-[#f8f6f3]",
     hoverColor: "hover:bg-yellow-200",
     href: "/services/card",
   },

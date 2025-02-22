@@ -16,7 +16,7 @@ const BlogPostCard: React.FC<{ post: BlogPost }> = ({ post }) => {
     <Link 
       href={`/blogs/${post.slug}`} 
       key={post.slug}
-      className="group p-6 rounded-[20px] transition-all duration-300 transform hover:-translate-y-1 bg-[#f8f6f3]"
+      className="group p-6 rounded-[20px] transition-all duration-300 transform hover:-translate-y-1 bg-grayBackground"
     >
       <div className={`relative w-full aspect-[1.91/1] mb-6 rounded-2xl overflow-hidden ${post.bgColor}`}>
         <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">

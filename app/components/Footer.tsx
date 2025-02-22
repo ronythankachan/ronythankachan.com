@@ -108,7 +108,7 @@ const Footer = () => {
         <Link
           key={social.label}
           href={social.href}
-          className="p-3 flex items-center justify-center rounded-full bg-[#f8f6f3]"
+          className="p-3 flex items-center justify-center rounded-full bg-grayBackground"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -125,7 +125,9 @@ const Footer = () => {
       }`}
     >
       <div className="flex flex-col items-center lg:items-start gap-2 mb-4 lg:mb-0 mt-20">
-        <div className="text-[#5dccf1] text-4xl font-serif">RT</div>
+        <Link href="/" className="logo text-4xl">
+          Rony Thankachan
+        </Link>
         <p className="text-gray-600">
           © Rony Thankachan {currentYear}. All rights reserved.
         </p>

@@ -26,7 +26,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         className="fixed inset-0 bg-black bg-opacity-50 z-40"
         onClick={onClose}
       />
-      <div className="fixed inset-0 bg-[#f8f6f3] z-50">
+      <div className="fixed inset-0 bg-grayBackground z-50">
         {/* Fixed Header with Close Button */}
         <div className="absolute top-0 left-0 right-0 h-24 px-8 flex justify-end items-center">
           <button 

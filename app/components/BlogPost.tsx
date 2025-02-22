@@ -39,15 +39,13 @@ const BlogPost: React.FC<BlogPostProps> = ({
                   style={{ objectFit: "contain" }}
                 />
               ) : (
-                <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
+                <div className="relative h-full w-full flex flex-col gap-10 justify-center items-center text-center p-8">
                   <h2
-                    className="text-[24px] md:text-[32px] leading-tight mb-6"
+                    className="text-2xl md:text-3xl leading-tight"
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                   <div className="flex items-center">
-                    <span className="text-xs md:text-sm font-medium">
-                      {author}
-                    </span>
+                    <span className="logo text-3xl">{author}</span>
                   </div>
                 </div>
               )}
