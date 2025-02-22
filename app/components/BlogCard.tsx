@@ -16,7 +16,7 @@ interface BlogPost {
 const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
   return (
     <Link href={`/blogs/${post.slug}`} key={post.slug}>
-      <CardContainer className="h-[500px] md:h-[600px] flex flex-col justify-between">
+      <CardContainer className="h-[600px] flex flex-col justify-between">
         <div
           className={`relative w-full h-[300px] mb-6 rounded-2xl overflow-hidden font-serif min-h-[250px] ${
             post.imageUrl ? "" : post.bgColor
@@ -31,15 +31,13 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
               style={{ objectFit: "cover" }}
             />
           ) : (
-            <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8">
+            <div className="relative h-full w-full flex flex-col justify-center items-center text-center p-8 gap-10">
               <h2
-                className="text-[24px] md:text-[32px] leading-tight mb-6"
+                className="text-2xl md:text-3xl leading-tight"
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />
               <div className="flex items-center">
-                <span className="text-xs md:text-sm font-medium">
-                  {post.author}
-                </span>
+                <span className="logo text-2xl md:text-3xl">{post.author}</span>
               </div>
             </div>
           )}

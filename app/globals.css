@@ -13,3 +13,7 @@ body {
   background: var(--background);
   font-family: "Gloock", Arial, Helvetica, sans-serif;
 }
+
+.logo {
+  @apply text-blue-500 font-extrabold font-sacramento;
+}

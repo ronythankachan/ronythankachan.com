@@ -125,10 +125,7 @@ const Footer = () => {
       }`}
     >
       <div className="flex flex-col items-center lg:items-start gap-2 mb-4 lg:mb-0 mt-20">
-        <Link
-          href="/"
-          className="text-blue-500 text-4xl font-bold font-sacramento"
-        >
+        <Link href="/" className="logo text-4xl">
           Rony Thankachan
         </Link>
         <p className="text-gray-600">

@@ -54,10 +54,7 @@ const Navbar = () => {
       {/* Desktop Navbar */}
       <nav className="hidden lg:flex justify-between items-center mt-10 rounded-t-3xl p-12 bg-grayBackground">
         {/* Logo/Brand */}
-        <Link
-          href="/"
-          className="text-blue-500 text-4xl font-bold font-sacramento"
-        >
+        <Link href="/" className="logo text-4xl">
           Rony Thankachan
         </Link>
 
@@ -118,10 +115,7 @@ const Navbar = () => {
       {/* Tablet/Mobile Navbar */}
       <nav className="lg:hidden flex justify-between items-center py-4 px-4 mt-8 rounded-t-3xl md:px-8 bg-grayBackground">
         {/* Logo/Brand */}
-        <Link
-          href="/"
-          className="text-blue-500 text-4xl font-bold font-sacramento"
-        >
+        <Link href="/" className="logo text-4xl">
           Rony Thankachan
         </Link>
 
