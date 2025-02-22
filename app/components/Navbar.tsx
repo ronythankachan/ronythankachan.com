@@ -3,36 +3,39 @@
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import MobileMenu from "./MobileMenu";
-import ResourcesDropdown from './ResourcesDropdown';
+import ResourcesDropdown from "./ResourcesDropdown";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  
+
   useEffect(() => {
     // Set the navbar height CSS variable
-    const navbar = document.querySelector('nav');
+    const navbar = document.querySelector("nav");
     if (navbar) {
       const height = navbar.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+      document.documentElement.style.setProperty(
+        "--navbar-height",
+        `${height}px`
+      );
     }
   }, []);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
-        buttonRef.current && 
+        buttonRef.current &&
         !buttonRef.current.contains(e.target as Node) &&
-        !(e.target as Element).closest('.resources-dropdown')
+        !(e.target as Element).closest(".resources-dropdown")
       ) {
         setIsResourcesOpen(false);
       }
     };
 
     if (isResourcesOpen) {
-      document.addEventListener('click', handleClickOutside);
-      return () => document.removeEventListener('click', handleClickOutside);
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
     }
   }, [isResourcesOpen]);
 
@@ -49,48 +52,56 @@ const Navbar = () => {
   return (
     <div className="relative">
       {/* Desktop Navbar */}
-      <nav className="hidden lg:flex justify-between items-center py-4 px-4 mt-8 rounded-t-3xl md:px-8 bg-[#f8f6f3]">
+      <nav className="hidden lg:flex justify-between items-center mt-10 rounded-t-3xl p-12 bg-grayBackground">
         {/* Logo/Brand */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="text-[#5dccf1] text-3xl font-serif">RT</div>
-          <span className="text-lg">Rony Thankachan</span>
+        <Link
+          href="/"
+          className="text-blue-500 text-4xl font-bold font-sacramento"
+        >
+          Rony Thankachan
         </Link>
-        
+
         {/* Desktop Navigation */}
         <div className="flex items-center gap-12">
-          <Link 
-            href="https://github.com/ronythankachan" 
+          <Link
+            href="https://github.com/ronythankachan"
             className="text-lg hover:underline hover:underline-offset-4"
             target="_blank"
             rel="noopener noreferrer"
-          >            
+          >
             Github
           </Link>
-          <button 
+          <button
             ref={buttonRef}
             onClick={handleResourcesClick}
             className="flex items-center text-lg"
           >
             Free Resources
-            <svg 
-              className="ml-2 w-4 h-4" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24" 
+            <svg
+              className="ml-2 w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M19 9l-7 7-7-7" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
               />
             </svg>
           </button>
-          <Link href="/blogs" className="text-lg hover:underline hover:underline-offset-4">
+          <Link
+            href="/blogs"
+            className="text-lg hover:underline hover:underline-offset-4"
+          >
             Blogs
           </Link>
-          <Link href="/about" className="text-lg hover:underline hover:underline-offset-4">
+          <Link
+            href="/about"
+            className="text-lg hover:underline hover:underline-offset-4"
+          >
             About me
           </Link>
           <Link
@@ -105,13 +116,13 @@ const Navbar = () => {
       </nav>
 
       {/* Tablet/Mobile Navbar */}
-      <nav className="lg:hidden flex justify-between items-center py-4 px-4 mt-8 rounded-t-3xl md:px-8 bg-[#f8f6f3]">
+      <nav className="lg:hidden flex justify-between items-center py-4 px-4 mt-8 rounded-t-3xl md:px-8 bg-grayBackground">
         {/* Logo/Brand */}
         <Link href="/" className="flex items-center gap-3">
           <div className="text-[#5dccf1] text-3xl font-serif">RT</div>
           <span className="text-2xl">Rony Thankachan</span>
         </Link>
-        
+
         <div className="flex items-center gap-4">
           {/* Join Subscribers Button - Tablet only */}
           <Link
@@ -122,7 +133,7 @@ const Navbar = () => {
           </Link>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="p-3 rounded-xl bg-[#fcd56b]"
             onClick={() => setIsMobileMenuOpen(true)}
           >
@@ -136,19 +147,15 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <MobileMenu 
-        isOpen={isMobileMenuOpen} 
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
         onClose={handleMobileMenuClose}
         onResourcesClick={() => setIsResourcesOpen(!isResourcesOpen)}
         isResourcesOpen={isResourcesOpen}
       />
 
       {/* Resources Dropdown - Only show in desktop view */}
-      {!isMobileMenuOpen && (
-        <ResourcesDropdown 
-          isOpen={isResourcesOpen}
-        />
-      )}
+      {!isMobileMenuOpen && <ResourcesDropdown isOpen={isResourcesOpen} />}
     </div>
   );
 };

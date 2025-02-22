@@ -7,7 +7,6 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: string;
-  bgColor: string;
   hoverColor: string;
   href: string;
 }
@@ -16,13 +15,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
   icon,
-  bgColor,
   hoverColor,
   href,
 }) => {
   return (
     <Link href={href}>
-      <CardContainer className={`${bgColor} ${hoverColor}`}>
+      <CardContainer className={`bg-grayBackground ${hoverColor}`}>
         <div className="text-3xl mb-4">
           <Image src={icon} alt={`${title} icon`} width={100} height={100} />
         </div>
