@@ -27,12 +27,15 @@ const Greeting: React.FC = React.memo(() => {
             <h1 className="text-[32px] md:text-6xl leading-[1.5] font-serif mb-10 relative">
               Hey Humans
               <span className="text-2xl"> (and AI)!</span>
-              <div className="absolute bottom-[-5px] left-0 right-0 md:right-auto md:w-[450px]">
-                <div className="h-[2px] bg-[#5dccf1] mb-[2px] rounded-full opacity-60" />
-                <div className="h-[2px] bg-[#5dccf1] rounded-full" />
-              </div>
+              <Image
+                src="/marker.png"
+                alt="Double line marker"
+                width={200}
+                height={2}
+                className="ml-32"
+              />
             </h1>
-            <p className="text-[24px] md:text-4xl leading-[2] font-serif">
+            <p className="text-[24px] md:text-4xl font-serif">
               I&apos;m Rony, a{" "}
               <span className="underline underline-offset-4">
                 Senior Software Engineer
@@ -49,7 +52,7 @@ const Greeting: React.FC = React.memo(() => {
               all other aspects of software development.{" "}
               <Link
                 href="/about"
-                className="inline-flex items-center space-x-2 font-medium border-b border-blue-500 hover:border-none hover:opacity-80 group text-blue-500 mt-5 text-2xl"
+                className="inline-flex items-center space-x-2 font-medium border-b border-blue-500 hover:border-none hover:opacity-80 group text-blue-500 text-2xl"
               >
                 <span className="transform transition-transform duration-300 group-hover:scale-105">
                   Read more

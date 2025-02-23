@@ -7,44 +7,44 @@ const services: ServiceItem[] = [
   {
     title: "Why AGI is not coming in 2025",
     description:
-      "Read my article on why AGI is not coming in 2025. It's a written from a technical perspective. Read it here",
+      "Read my article on why AGI is not coming in 2025. It's written from a technical perspective. Read it here.",
     icon: "/ai.png",
-    hoverColor: "hover:bg-orange-400",
+    hoverColor: "hover:bg-orange-300",
     href: "/blogs/agi-is-not-coming-in-2025",
     ctaText: "Read Article",
   },
   {
     title: "Browse through my blogs",
     description:
-      "I write about Software Engineering, AI, and more. Checkout my blogs here",
+      "I write about Software Engineering, AI, and more. Check out my blogs here.",
     icon: "/blog.png",
-    hoverColor: "hover:bg-purple-400",
+    hoverColor: "hover:bg-purple-300",
     href: "/blogs",
-    ctaText: "Checkout blogs",
+    ctaText: "Check out Blogs",
   },
   {
-    title: "Checkout what I'm working on",
+    title: "Check out what I'm working on",
     description:
-      "In my personal time, I'm always working on something exciting, Something that I'm passionate about. Checkout what I'm working on my github",
-    icon: "/github2.png",
-    hoverColor: "hover:bg-emerald-400",
+      "In my personal time, I'm always working on something exciting, something that I'm passionate about. Check out what I'm working on my GitHub.",
+    icon: "/version-control.png",
+    hoverColor: "hover:bg-emerald-300",
     href: "https://github.com/ronythankachan",
-    ctaText: "Visit Github",
+    ctaText: "Visit GitHub",
   },
   {
-    title: "Watch Some of my videos",
+    title: "Watch some of my videos",
     description:
-      "If you are not able to see any videos, that's because I'm experimenting with couple of ideas and currently only some people can see them for feedback. I will be posting them publicly soon.",
+      "If you are not able to see any videos, that's because I'm experimenting with a couple of ideas and currently only some people can see them for feedback. I will be posting them publicly soon.",
     icon: "/youtube2.png",
-    hoverColor: "hover:bg-blue-400",
+    hoverColor: "hover:bg-blue-300",
     href: "https://www.youtube.com/@rony.thankachan",
-    ctaText: "Get started",
+    ctaText: "Get Started",
   },
   {
     title: "... and more",
-    hoverColor: "hover:bg-yellow-400",
-    href: "/services/card",
-    ctaText: "Explore more",
+    hoverColor: "hover:bg-yellow-300",
+    href: "/",
+    ctaText: "Explore More",
   },
 ];
 
