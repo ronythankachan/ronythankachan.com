@@ -1,63 +1,74 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
 import { ServiceItem } from "../types";
+import Container from "./shared/Container";
 
 const services: ServiceItem[] = [
   {
-    title: "Grow a YouTube Channel",
+    title: "Why AGI is not coming in 2025",
     description:
-      "Learn how to start a YouTube channel based on my years of experience. Learn how to start a YouTube channel based on my years of experience.",
-    icon: "/youtube-large.png",
-    hoverColor: "hover:bg-sky-300",
-    href: "/services/youtube",
+      "Read my article on why AGI is not coming in 2025. It's written from a technical perspective. Read it here.",
+    icon: "/ai.png",
+    hoverColor: "hover:bg-orange-300",
+    href: "/blogs/agi-is-not-coming-in-2025",
+    ctaText: "Read Article",
   },
   {
-    title: "Be More Productive",
+    title: "Browse through my blogs",
     description:
-      "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "/certificate.png",
+      "I write about Software Engineering, AI, and more. Check out my blogs here.",
+    icon: "/blog.png",
     hoverColor: "hover:bg-purple-300",
-    href: "/services/productivity",
+    href: "/blogs",
+    ctaText: "Check out Blogs",
   },
   {
-    title: "Build an Online Business",
+    title: "Check out what I'm working on",
     description:
-      "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "/meeting.png",
-    hoverColor: "hover:bg-emerald-200",
-    href: "/services/business",
+      "In my personal time, I'm always working on something exciting, something that I'm passionate about. Check out what I'm working on my GitHub.",
+    icon: "/version-control.png",
+    hoverColor: "hover:bg-emerald-300",
+    href: "https://github.com/ronythankachan",
+    ctaText: "Visit GitHub",
   },
   {
-    title: "Make money from Software",
+    title: "Watch some of my videos",
     description:
-      "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "/money-bag.png",
-    hoverColor: "hover:bg-blue-200",
-    href: "/services/another",
+      "If you are not able to see any videos, that's because I'm experimenting with a couple of ideas and currently only some people can see them for feedback. I will be posting them publicly soon.",
+    icon: "/youtube2.png",
+    hoverColor: "hover:bg-blue-300",
+    href: "https://www.youtube.com/@rony.thankachan",
+    ctaText: "Get Started",
   },
   {
-    title: "This is just a card",
-    description:
-      "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "/gear.png",
-    hoverColor: "hover:bg-yellow-200",
-    href: "/services/card",
+    title: "... and more",
+    hoverColor: "hover:bg-yellow-300",
+    href: "/",
+    ctaText: "Explore More",
   },
 ];
 
 const Services = () => {
   return (
-    <section className="max-w-[1200px] mx-auto px-4 pt-16">
-      <h1 className="text-[60px] leading-tight font-serif mb-12">
-        How Can
-        <br />I Help You?
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service) => (
-          <ServiceCard key={service.title} {...service} />
-        ))}
+    <Container>
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 mt-12 md:mt-20">
+        <div>
+          <h1 className="text-6xl md:text-8xl leading-tight font-serif md:mb-16">
+            Start exploring
+            <br />
+            from here
+          </h1>
+          {services.slice(0, Math.floor(services.length / 2)).map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
+        <div>
+          {services.slice(Math.floor(services.length / 2)).map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
       </div>
-    </section>
+    </Container>
   );
 };
 
