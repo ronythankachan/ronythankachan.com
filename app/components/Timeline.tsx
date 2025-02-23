@@ -78,8 +78,8 @@ const Timeline = () => {
                   <Image
                     src={event.icon}
                     alt="Icon"
-                    width={140}
-                    height={140}
+                    width={120}
+                    height={120}
                     style={{ width: "auto", height: "auto" }}
                   />
                 </div>

@@ -13,7 +13,11 @@ interface BlogPost {
   imageUrl?: string;
 }
 
-const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
+interface BlogCardProps {
+  post: BlogPost;
+}
+
+const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
     <Link href={`/blogs/${post.slug}`} key={post.slug}>
       <CardContainer className=" flex flex-col justify-between">
