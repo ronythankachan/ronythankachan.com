@@ -5,44 +5,46 @@ import Container from "./shared/Container";
 
 const services: ServiceItem[] = [
   {
-    title: "Grow a YouTube Channel",
+    title: "Why AGI is not coming in 2025",
     description:
-      "Learn how to start a YouTube channel based on my years of experience. Learn how to start a YouTube channel based on my years of experience.",
-    icon: "/youtube-large.png",
-    hoverColor: "hover:bg-sky-300",
-    href: "/services/youtube",
+      "Read my article on why AGI is not coming in 2025. It's a written from a technical perspective. Read it here",
+    icon: "/ai.png",
+    hoverColor: "hover:bg-orange-400",
+    href: "/blogs/agi-is-not-coming-in-2025",
+    ctaText: "Read Article",
   },
   {
-    title: "Be More Productive",
+    title: "Browse through my blogs",
     description:
-      "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "/certificate.png",
-    hoverColor: "hover:bg-purple-300",
-    href: "/services/productivity",
+      "I write about Software Engineering, AI, and more. Checkout my blogs here",
+    icon: "/blog.png",
+    hoverColor: "hover:bg-purple-400",
+    href: "/blogs",
+    ctaText: "Checkout blogs",
   },
   {
-    title: "Build an Online Business",
+    title: "Checkout what I'm working on",
     description:
-      "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "/meeting.png",
-    hoverColor: "hover:bg-emerald-200",
-    href: "/services/business",
+      "In my personal time, I'm always working on something exciting, Something that I'm passionate about. Checkout what I'm working on my github",
+    icon: "/github2.png",
+    hoverColor: "hover:bg-emerald-400",
+    href: "https://github.com/ronythankachan",
+    ctaText: "Visit Github",
   },
   {
-    title: "Make money from Software",
+    title: "Watch Some of my videos",
     description:
-      "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "/money-bag.png",
-    hoverColor: "hover:bg-blue-200",
-    href: "/services/another",
+      "If you are not able to see any videos, that's because I'm experimenting with couple of ideas and currently only some people can see them for feedback. I will be posting them publicly soon.",
+    icon: "/youtube2.png",
+    hoverColor: "hover:bg-blue-400",
+    href: "https://www.youtube.com/@rony.thankachan",
+    ctaText: "Get started",
   },
   {
-    title: "This is just a card",
-    description:
-      "How to execute efficiently, make time for what matters and have fun along the way.",
-    icon: "/gear.png",
-    hoverColor: "hover:bg-yellow-200",
+    title: "... and more",
+    hoverColor: "hover:bg-yellow-400",
     href: "/services/card",
+    ctaText: "Explore more",
   },
 ];
 
