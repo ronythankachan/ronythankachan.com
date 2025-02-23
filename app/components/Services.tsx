@@ -1,6 +1,7 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
 import { ServiceItem } from "../types";
+import Container from "./shared/Container";
 
 const services: ServiceItem[] = [
   {
@@ -47,17 +48,25 @@ const services: ServiceItem[] = [
 
 const Services = () => {
   return (
-    <section className="max-w-[1200px] mx-auto px-4 pt-16">
-      <h1 className="text-[60px] leading-tight font-serif mb-12">
-        How Can
-        <br />I Help You?
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service) => (
-          <ServiceCard key={service.title} {...service} />
-        ))}
+    <Container>
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 mt-12 md:mt-20">
+        <div>
+          <h1 className="text-6xl md:text-8xl leading-tight font-serif md:mb-16">
+            Start exploring
+            <br />
+            from here
+          </h1>
+          {services.slice(0, Math.floor(services.length / 2)).map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
+        <div>
+          {services.slice(Math.floor(services.length / 2)).map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

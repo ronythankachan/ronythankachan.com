@@ -3,6 +3,7 @@ import Image from "next/image";
 import Container from "./shared/Container";
 import NewsLetter from "./NewsLetter";
 import HeroSection from "./shared/HeroSection";
+import Link from "next/link";
 
 const Greeting: React.FC = React.memo(() => {
   return (
@@ -31,15 +32,31 @@ const Greeting: React.FC = React.memo(() => {
               </div>
             </h1>
             <p className="text-[24px] md:text-[32px] leading-tight font-serif">
-              I&apos;m Rony. A{" "}
+              I&apos;m Rony, a{" "}
               <span className="underline underline-offset-4">
                 Senior Software Engineer
-              </span>
-              , and{" "}
+              </span>{" "}
+              and{" "}
               <span className="underline underline-offset-4">
-                AI content writer
+                Content Writer
+              </span>{" "}
+              specializing in{" "}
+              <span className="underline underline-offset-4">
+                System Design
               </span>
-              . If you are interested, have a look at what I&apos;m working on.
+              , <span className="underline underline-offset-4">AI</span>, and
+              all other aspects of software development.{" "}
+              <Link
+                href="/about"
+                className="inline-flex items-center space-x-2 font-medium border-b border-blue-500 hover:border-none hover:opacity-80 group text-blue-500"
+              >
+                <span className="transform transition-transform duration-300 group-hover:scale-105">
+                  Read more
+                </span>
+                <span className="transform transition-transform duration-300 group-hover:translate-x-2">
+                  →
+                </span>
+              </Link>
             </p>
           </div>
         </div>
