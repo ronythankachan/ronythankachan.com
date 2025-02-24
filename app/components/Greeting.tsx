@@ -38,9 +38,9 @@ const Greeting: React.FC = React.memo(() => {
             <p className="text-2xl leading-[1.5] md:leading-[1.5] md:text-4xl mt-[-20px]">
               I&apos;m Rony, a{" "}
               <span className="border-b-2 border-blue-500 bg-green-100">
-                Senior Software Engineer at MakeMyTrip
+                Senior Software Engineer at MakeMyTrip,
               </span>{" "}
-              and I write technical blogs and make videos about{" "}
+              technical blogger and make videos about{" "}
               <span className="border-b-2 border-blue-500 bg-orange-100">
                 System Design, AI
               </span>{" "}
