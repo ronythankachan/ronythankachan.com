@@ -15,8 +15,7 @@ export const resourceTopics = [
 ];
 
 export const mainNavLinks = [
-  { label: "About me", href: "/about" },
+  { label: "About", href: "/about" },
   { label: "Blogs", href: "/blogs" },
   { label: "Github", href: "https://github.com/ronythankachan" },
-  { label: "Projects", href: "/projects" },
 ];

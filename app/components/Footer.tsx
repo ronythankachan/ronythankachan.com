@@ -7,16 +7,6 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      href: "https://www.youtube.com/@rony.thankachan",
-      label: "YT",
-      icon: "/youtube.png",
-    },
-    {
-      href: "https://instagram.com/iampurplish",
-      label: "IG",
-      icon: "/instagram.png",
-    },
-    {
       href: "https://linkedin.com/in/ronythankachan",
       label: "IN",
       icon: "/linkedin.png",
@@ -25,6 +15,16 @@ const Footer = () => {
       href: "https://github.com/ronythankachan",
       label: "TT",
       icon: "/github.png",
+    },
+    {
+      href: "https://instagram.com/iampurplish",
+      label: "IG",
+      icon: "/instagram.png",
+    },
+    {
+      href: "https://www.youtube.com/@rony.thankachan",
+      label: "YT",
+      icon: "/youtube.png",
     },
   ];
 

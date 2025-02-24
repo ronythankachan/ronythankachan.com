@@ -68,10 +68,11 @@ const Navbar = () => {
           >
             Github
           </Link>
+          {/* Temporarly hide this */}
           <button
             ref={buttonRef}
             onClick={handleResourcesClick}
-            className="flex items-center text-lg"
+            className="flex items-center text-lg hidden"
           >
             Free Resources
             <svg
