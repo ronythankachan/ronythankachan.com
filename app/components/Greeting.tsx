@@ -24,7 +24,7 @@ const Greeting: React.FC = React.memo(() => {
           </div>
 
           <div className="w-full md:w-1/2 text-center md:text-left md:pl-10">
-            <h1 className="text-[32px] md:text-6xl leading-[1.5] font-serif mb-10 relative">
+            <h1 className="text-4xl md:text-6xl leading-[1.5] font-serif mb-10 relative">
               Hey Humans
               <span className="text-2xl"> (and AI)!</span>
               <Image
@@ -35,24 +35,19 @@ const Greeting: React.FC = React.memo(() => {
                 className="ml-32"
               />
             </h1>
-            <p className="text-[24px] md:text-4xl font-serif">
+            <p className="text-2xl leading-[1.5] md:leading-[1.5] md:text-4xl mt-[-20px]">
               I&apos;m Rony, a{" "}
-              <span className="underline underline-offset-4">
-                Senior Software Engineer
+              <span className="border-b-2 border-blue-500 bg-green-100">
+                Senior Software Engineer at MakeMyTrip
               </span>{" "}
-              and{" "}
-              <span className="underline underline-offset-4">
-                Content Writer
+              and I write technical blogs and make videos about{" "}
+              <span className="border-b-2 border-blue-500 bg-orange-100">
+                System Design, AI
               </span>{" "}
-              specializing in{" "}
-              <span className="underline underline-offset-4">
-                System Design
-              </span>
-              , <span className="underline underline-offset-4">AI</span>, and
-              all other aspects of software development.{" "}
+              and other topics that interest me.{" "}
               <Link
                 href="/about"
-                className="inline-flex items-center space-x-2 font-medium border-b border-blue-500 hover:border-none hover:opacity-80 group text-blue-500 text-2xl"
+                className="inline-flex items-center space-x-2 border-b border-blue-500 hover:border-none hover:opacity-80 group text-blue-500 text-2xl"
               >
                 <span className="transform transition-transform duration-300 group-hover:scale-105">
                   Read more
