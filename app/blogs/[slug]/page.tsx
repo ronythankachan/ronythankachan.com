@@ -8,6 +8,7 @@ import Container from "@/app/components/shared/Container";
 import Image from "next/image";
 import Link from "next/link";
 import BlogPost from "@/app/components/BlogPost";
+import NextBlogs from "@/app/components/NextBlogs";
 
 interface Params {
   slug: string;
@@ -38,6 +39,28 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
 
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContent);
+
+  // Get all blog files and filter out the current one
+  const allFiles = fs.readdirSync(path.join("public", "blogs"));
+  const otherFiles = allFiles.filter((filename) => filename !== `${slug}.md`);
+
+  // Select the next two blog posts
+  const nextBlogs = otherFiles.slice(0, 2).map((filename) => {
+    const fileContent = fs.readFileSync(
+      path.join("public", "blogs", filename),
+      "utf8"
+    );
+    const { data, content: otherContent } = matter(fileContent);
+    return {
+      slug: filename.replace(".md", ""),
+      title: data.title,
+      bgColor: data.bgColor,
+      date: data.date,
+      author: data.author,
+      excerpt: data.excerpt || otherContent.substring(0, 100) + "...",
+      imageUrl: data.imageUrl,
+    };
+  });
 
   return (
     <>
@@ -114,6 +137,10 @@ const BlogPage = async ({ params }: { params: Promise<Params> }) => {
         imageUrl={data.imageUrl}
         content={content}
       />
+      <hr className="my-8 border-gray-300" />
+      <Container>
+        <NextBlogs blogs={nextBlogs} />
+      </Container>
     </>
   );
 };
