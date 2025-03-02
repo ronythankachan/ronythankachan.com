@@ -52,7 +52,7 @@ const BlogPage = () => {
         </Container>
       </HeroSection>
 
-      <Container className="py-16">
+      <Container className="pt-16">
         <h1 className="text-[60px] leading-tight font-serif mb-12">
           Recent Blogs
         </h1>

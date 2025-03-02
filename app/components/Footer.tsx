@@ -124,7 +124,7 @@ const Footer = () => {
         isMobile ? "items-center text-center" : "lg:flex-row lg:justify-around"
       }`}
     >
-      <div className="flex flex-col items-center lg:items-start gap-2 mb-4 lg:mb-0 mt-20">
+      <div className="flex flex-col items-center lg:items-start gap-2 mb-4 lg:mb-0">
         <Link href="/" className="logo text-4xl">
           Rony Thankachan
         </Link>
@@ -146,8 +146,8 @@ const Footer = () => {
   );
 
   return (
-    <footer className="max-w-7xl mx-auto px-4 py-20 mt-10">
-      <hr className="border-t border-gray-300 mb-8" />
+    <footer className="max-w-7xl mx-auto px-4 py-20">
+      <hr className="border-t border-gray-300 mb-10" />
       {/* Desktop view */}
       <div className="hidden lg:block">{renderFooterContent(false)}</div>
 
