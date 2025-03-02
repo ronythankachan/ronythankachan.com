@@ -124,7 +124,7 @@ const Footer = () => {
         isMobile ? "items-center text-center" : "lg:flex-row lg:justify-around"
       }`}
     >
-      <div className="flex flex-col items-center lg:items-start gap-2 mb-4 lg:mb-0">
+      <div className="flex flex-col items-center lg:items-start gap-2 mb-4 md:mt-16 lg:mb-0">
         <Link href="/" className="logo text-4xl">
           Rony Thankachan
         </Link>

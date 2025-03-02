@@ -61,6 +61,12 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="flex items-center gap-12">
           <Link
+            href="/about"
+            className="text-lg hover:underline hover:underline-offset-4"
+          >
+            About
+          </Link>
+          <Link
             href="https://github.com/ronythankachan"
             className="text-lg hover:underline hover:underline-offset-4"
             target="_blank"
@@ -96,12 +102,7 @@ const Navbar = () => {
           >
             Blogs
           </Link>
-          <Link
-            href="/about"
-            className="text-lg hover:underline hover:underline-offset-4"
-          >
-            About me
-          </Link>
+
           <Link
             href="https://www.linkedin.com/in/ronythankachan/"
             target="_blank"

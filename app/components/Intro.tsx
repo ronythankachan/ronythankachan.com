@@ -27,11 +27,18 @@ const AboutPageIntro = () => {
             </span>
             .
           </h1>
-          <h2 className="text-3xl leading-tight my-4">
+          <h2 className="text-2xl md:text-3xl leading-tight my-4 relative inline-block">
             Quick Facts{" "}
-            <span className="font-bold underline underline-offset-4 bg-yellow-100">
+            <span className="font-bold relative z-10 md:ml-4 p-2">
               About Me
             </span>
+            <Image
+              src="/circle.png"
+              alt="Circle"
+              width={140}
+              height={140}
+              className="absolute top-[-10px] left-32 md:left-40 transform z-20 md:w-[200px] md:h-[50px]"
+            />
           </h2>
           <ul className="list-none space-y-3 md:space-y-4 text-base md:text-lg md:grid md:grid-cols-2 md:gap-x-8">
             {facts.map((fact, index) => (
