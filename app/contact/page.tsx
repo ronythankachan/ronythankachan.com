@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import HeroSection from "../components/shared/HeroSection";
 import Container from "../components/shared/Container";
+import ContactIntro from "../components/ContactIntro";
+import Image from "next/image";
 
 const Contact = () => {
   const [formData, setFormData] = React.useState({
@@ -61,95 +63,104 @@ const Contact = () => {
   return (
     <HeroSection>
       <Container>
-        <div className="flex justify-center items-center min-h-screen">
-          <form
-            className="space-y-6 bg-white p-8 shadow-lg max-w-md w-full"
-            onSubmit={handleSubmit}
-          >
-            <h1 className="text-[60px] leading-tight font-serif mb-12">
+        <ContactIntro />
+        <form
+          className="space-y-6 shadow-lg px-8 md:px-44 py-20 rounded-3xl mt-12 mx-auto max-w-3xl bg-white"
+          onSubmit={handleSubmit}
+        >
+          <div className="flex flex-col items-center justify-center gap-4 mb-8">
+            <Image
+              src="/rony2.jpeg"
+              alt="Rony's Picture"
+              width={80}
+              height={80}
+              className="rounded-full"
+            />
+            <h1 className="text-3xl md:text-5xl font-serif text-gray-800">
               Contact Me
             </h1>
-            <div>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleChange}
-                className="flex-1 px-8 py-3 bg-grayBackground rounded-full outline-none w-full"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                className="flex-1 px-8 py-3 bg-grayBackground rounded-full outline-none w-full"
-                required
-              />
-            </div>
-            <div>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                placeholder="Message"
-                value={formData.message}
-                onChange={handleChange}
-                className="flex-1 px-8 py-3 bg-grayBackground rounded-3xl outline-none w-full"
-                required
-              />
-            </div>
-            {message && (
-              <p
-                className={`text-sm mt-4 p-3 rounded-lg ${
-                  isSuccess
-                    ? "bg-green-100 text-green-700"
-                    : "bg-red-100 text-red-700"
-                }`}
-              >
-                {message}
-              </p>
-            )}
-            <div>
-              <button
-                type="submit"
-                className="w-full px-8 py-3 bg-sky-400 text-black rounded-full font-medium hover:bg-sky-200 transition-colors flex items-center justify-center"
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <svg
-                    className="animate-spin h-5 w-5 text-black"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    ></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
-                    ></path>
-                  </svg>
-                ) : (
-                  "Submit"
-                )}
-              </button>
-            </div>
-          </form>
-        </div>
+          </div>
+
+          <div>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              className="flex-1 px-6 py-3 bg-gray-100 rounded-full outline-none w-full focus:ring-2 focus:ring-sky-100"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              className="flex-1 px-6 py-3 bg-gray-100 rounded-full outline-none w-full focus:ring-2 focus:ring-sky-100"
+              required
+            />
+          </div>
+          <div>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
+              className="flex-1 px-6 py-3 bg-gray-100 rounded-3xl outline-none w-full focus:ring-2 focus:ring-sky-100"
+              required
+            />
+          </div>
+          {message && (
+            <p
+              className={`text-sm mt-4 p-3 rounded-lg ${
+                isSuccess
+                  ? "bg-green-100 text-green-700"
+                  : "bg-red-100 text-red-700"
+              }`}
+            >
+              {message}
+            </p>
+          )}
+          <div>
+            <button
+              type="submit"
+              className="w-full px-8 py-3 bg-gradient-to-r from-sky-400 to-sky-600 text-white rounded-full font-medium hover:from-sky-500 hover:to-sky-700 transition-colors flex items-center justify-center"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <svg
+                  className="animate-spin h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
+                  ></path>
+                </svg>
+              ) : (
+                "Submit"
+              )}
+            </button>
+          </div>
+        </form>
       </Container>
     </HeroSection>
   );
