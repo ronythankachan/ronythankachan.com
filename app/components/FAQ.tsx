@@ -51,9 +51,7 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`mb-4 overflow-hidden transition-all duration-500 ease-in-out bg-grayBackground rounded-3xl shadow-sm ${
-              activeIndex === index ? "max-h-full" : "max-h-22"
-            }`}
+            className="mb-4 bg-grayBackground rounded-3xl shadow-sm"
           >
             <button
               onClick={() => toggleAccordion(index)}
@@ -61,17 +59,19 @@ const FAQ = () => {
             >
               <span className="font-medium">{faq.question}</span>
               <ChevronDownIcon
-                className={`h-5 w-5 transform transition-transform ${
+                className={`h-5 w-5 transform transition-transform duration-300 ml-2 ${
                   activeIndex === index ? "rotate-180" : ""
                 }`}
               />
             </button>
             <div
-              className={`px-8 pb-8 font-medium ${
-                activeIndex === index ? "block" : "hidden"
+              className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${
+                activeIndex === index ? "max-h-80" : "max-h-0"
               }`}
             >
-              <p>{faq.answer}</p>
+              <div className="px-8 pb-8 font-medium">
+                <p>{faq.answer}</p>
+              </div>
             </div>
           </div>
         ))}
