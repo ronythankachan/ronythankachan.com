@@ -11,7 +11,7 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What gear do you use for personal use?",
+      question: "What gear do you use for personal projects?",
       answer:
         "I use a MacBook Air M1 from 2020, still works like a beast except I can't run the fastest deepseek model. My Keychron K4 mechanical keyboard with brown switches makes me feel like a professional typist, and my MX Master 2S mouse so that I can scroll 5000 pages in one second. Oh, and I have a Rode NT USB Mini mic because my voice deserves to be heard in HD.",
     },
