@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 const ContactForm = () => {
@@ -17,6 +18,16 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      const timer = setTimeout(() => {
+        setMessage("");
+        setIsSuccess(null);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [isSuccess]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,7 +82,7 @@ const ContactForm = () => {
           placeholder="Name"
           value={formData.name}
           onChange={handleChange}
-          className="flex-1 px-4 py-2 bg-gray-100 rounded-full outline-none w-full focus:ring-2 focus:ring-sky-100"
+          className="flex-1 px-6 py-3 bg-gray-100 rounded-full outline-none w-full "
           required
         />
       </div>
@@ -83,7 +94,7 @@ const ContactForm = () => {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          className="flex-1 px-4 py-2 bg-gray-100 rounded-full outline-none w-full focus:ring-2 focus:ring-sky-100"
+          className="flex-1 px-6 py-3 bg-gray-100 rounded-full outline-none w-full"
           required
         />
       </div>
@@ -95,13 +106,13 @@ const ContactForm = () => {
           placeholder="Message"
           value={formData.message}
           onChange={handleChange}
-          className="flex-1 px-4 py-2 bg-gray-100 rounded-3xl outline-none w-full focus:ring-2 focus:ring-sky-100"
+          className="flex-1 px-6 py-3 bg-gray-100 rounded-3xl outline-none w-full"
           required
         />
       </div>
       {message && (
         <p
-          className={`text-sm mt-2 p-2 rounded-lg ${
+          className={`text-sm mt-2 p-4 rounded-lg ${
             isSuccess
               ? "bg-green-100 text-green-700"
               : "bg-red-100 text-red-700"
@@ -113,7 +124,7 @@ const ContactForm = () => {
       <div>
         <button
           type="submit"
-          className="w-full px-6 py-2 bg-gradient-to-r from-sky-400 to-sky-600 text-white rounded-full font-medium hover:from-sky-500 hover:to-sky-700 transition-colors flex items-center justify-center"
+          className="w-full px-6 py-3 bg-gradient-to-r from-sky-400 to-sky-600 text-white rounded-full font-medium hover:from-sky-500 hover:to-sky-700 transition-colors flex items-center justify-center"
           disabled={isLoading}
         >
           {isLoading ? (
