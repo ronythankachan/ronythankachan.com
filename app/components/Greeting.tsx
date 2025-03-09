@@ -17,7 +17,7 @@ const Greeting: React.FC = React.memo(() => {
                 alt="Profile picture"
                 width={400}
                 height={400}
-                className="rounded-full bg-green-100"
+                className="rounded-full bg-blue-100"
                 priority
               />
             </div>
