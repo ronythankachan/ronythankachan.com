@@ -48,14 +48,15 @@ const FAQ = () => {
       </h1>
       <div className="max-w-2xl mx-auto">
         {faqs.map((faq, index) => (
-          <div key={index} className="mb-4">
+          <div
+            key={index}
+            className={`mb-4 overflow-hidden transition-all duration-500 ease-in-out bg-grayBackground rounded-3xl shadow-sm ${
+              activeIndex === index ? "max-h-full" : "max-h-22"
+            }`}
+          >
             <button
               onClick={() => toggleAccordion(index)}
-              className={`w-full flex justify-between items-center text-left bg-grayBackground p-8 shadow-sm focus:outline-none ${
-                activeIndex === index
-                  ? "rounded-t-3xl transition-all duration-500 ease-in-out"
-                  : "rounded-3xl transition-all duration-500 ease-in-out"
-              }`}
+              className="w-full flex justify-between items-center text-left p-8 focus:outline-none"
             >
               <span className="font-medium">{faq.question}</span>
               <ChevronDownIcon
@@ -65,13 +66,11 @@ const FAQ = () => {
               />
             </button>
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                activeIndex === index ? "max-h-40" : "max-h-0"
+              className={`px-8 pb-8 font-medium ${
+                activeIndex === index ? "block" : "hidden"
               }`}
             >
-              <div className="px-8 pb-8 rounded-b-3xl bg-grayBackground font-medium">
-                <p>{faq.answer}</p>
-              </div>
+              <p>{faq.answer}</p>
             </div>
           </div>
         ))}
