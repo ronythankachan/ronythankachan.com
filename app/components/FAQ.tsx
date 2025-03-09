@@ -66,7 +66,7 @@ const FAQ = () => {
             </button>
             <div
               className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${
-                activeIndex === index ? "max-h-40" : "max-h-0"
+                activeIndex === index ? "max-h-80" : "max-h-0"
               }`}
             >
               <div className="px-8 pb-8 font-medium">
