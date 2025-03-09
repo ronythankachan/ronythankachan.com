@@ -59,7 +59,7 @@ const FAQ = () => {
             >
               <span className="font-medium">{faq.question}</span>
               <ChevronDownIcon
-                className={`h-5 w-5 transform transition-transform duration-300 ${
+                className={`h-5 w-5 transform transition-transform duration-300 ml-2 ${
                   activeIndex === index ? "rotate-180" : ""
                 }`}
               />
