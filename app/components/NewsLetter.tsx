@@ -14,10 +14,14 @@ const NewsLetter: React.FC<NewsLetterProps> = ({
   const isVertical = direction === "vertical";
 
   return (
-    <div className="bg-white rounded-[32px] p-8 md:p-16 mt-10 shadow-xl">
+    <div
+      className={`bg-white rounded-[32px] ${
+        isVertical ? "md:p-10" : "p-8 md:p-16"
+      } mt-10 shadow-xl`}
+    >
       <div
         className={`flex flex-col ${
-          isVertical ? "" : "md:flex-row"
+          isVertical ? "md:gap-4" : "md:flex-row"
         } md:gap-16 gap-8`}
       >
         {/* Left Section */}
